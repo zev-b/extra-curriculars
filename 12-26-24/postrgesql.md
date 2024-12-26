@@ -127,3 +127,23 @@ UPDATE accounts SET balance = balance - 100 WHERE id = 1;
 UPDATE accounts SET balance = balance + 100 WHERE id = 2;
 COMMIT;
 ```
+
+##  Integration with Applications
+### Learn how to connect PostgreSQL to applications using libraries:
+#### Node.js: `pg` library
+#### Python: `psycopg2`
+#### Java: `JDBC`
+
+## Advanced Topics
+### Partitioning and Sharding:
+#### Partition tables for large datasets:
+```sql
+CREATE TABLE orders_partition (
+  order_id SERIAL PRIMARY KEY,
+  order_date DATE NOT NULL
+) PARTITION BY RANGE (order_date);
+```
+#### Replication and High Availability:
+- Set up streaming replication for redundancy.
+#### Logical Replication:
+- Use for publishing and subscribing to data changes.
