@@ -128,6 +128,13 @@ UPDATE accounts SET balance = balance + 100 WHERE id = 2;
 COMMIT;
 ```
 
+## Performance Tuning
+### Query Optimization:
+- Use `EXPLAIN` and `EXPLAIN ANALYZE` to analyze query plans.
+### Connection Pooling:
+- Set up a connection pool using tools like `pgbouncer` or `pgpool-II`.
+- Adjust configuration parameters in `postgresql.conf` (e.g., `work_mem`, `shared_buffers`).
+
 ##  Integration with Applications
 ### Learn how to connect PostgreSQL to applications using libraries:
 #### Node.js: `pg` library
