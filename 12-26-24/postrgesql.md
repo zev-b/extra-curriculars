@@ -83,3 +83,47 @@ WITH ranked_users AS (
 )
 SELECT * FROM ranked_users WHERE rank <= 10;
 ```
+## PostgreSQL-Specific Features
+### Extensions:
+__Use PostgreSQL extensions like pg_trgm for trigram similarity, uuid-ossp for UUIDs, and postgis for geographic data.__
+### JSON and JSONB:
+__Store and query JSON data:__
+```sql
+SELECT data->>'key' FROM my_table WHERE data->'key' = '"value"';
+```
+### Arrays:
+__Store arrays in columns:__
+```sql
+CREATE TABLE tags (id SERIAL PRIMARY KEY, tag_list TEXT[]);
+INSERT INTO tags (tag_list) VALUES (ARRAY['tag1', 'tag2']);
+```
+### Indexing:
+__Learn index types: B-TREE, GIN, GIST, and how they affect query performance.__
+```sql
+CREATE INDEX idx_user_email ON users(email);
+```
+
+##  Database Management
+### Backup and Restore:
+__Backup a database:__
+```bash
+pg_dump mydb > mydb_backup.sql
+```
+__Restore a database:__
+```bash
+psql -U <username> -d <database_name> -f mydb_backup.sql
+```
+### Roles and Permissions:
+__Create roles:__
+```sql
+CREATE ROLE admin WITH LOGIN PASSWORD 'password';
+GRANT ALL PRIVILEGES ON DATABASE mydb TO admin;
+```
+### Transactions:
+__Work with transactions for safe data updates:__
+```sql
+BEGIN;
+UPDATE accounts SET balance = balance - 100 WHERE id = 1;
+UPDATE accounts SET balance = balance + 100 WHERE id = 2;
+COMMIT;
+```
