@@ -142,6 +142,7 @@ COMMIT;
 #### Python: `psycopg2`
 #### Java: `JDBC`
 
+
 ## Advanced Topics
 ### Partitioning and Sharding:
 #### Partition tables for large datasets:
