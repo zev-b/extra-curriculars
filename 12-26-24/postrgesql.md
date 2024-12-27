@@ -121,6 +121,7 @@ GRANT ALL PRIVILEGES ON DATABASE mydb TO admin;
 ```
 ### Transactions:
 __Work with transactions for safe data updates:__
+
 ```sql
 BEGIN;
 UPDATE accounts SET balance = balance - 100 WHERE id = 1;
