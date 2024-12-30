@@ -151,6 +151,7 @@ COMMIT;
 ## Advanced Topics
 
 ### Partitioning and Sharding:
+
 #### Partition tables for large datasets:
 ```sql
 CREATE TABLE orders_partition (
