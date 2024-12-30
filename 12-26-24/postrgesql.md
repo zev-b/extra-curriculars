@@ -138,6 +138,7 @@ COMMIT;
 - Adjust configuration parameters in `postgresql.conf` (e.g., `work_mem`, `shared_buffers`).
 
 ##  Integration with Applications
+
 ### Learn how to connect PostgreSQL to applications using libraries:
 #### Node.js: `pg` library
 #### Python: `psycopg2`
