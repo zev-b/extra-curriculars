@@ -130,6 +130,7 @@ COMMIT;
 ```
 
 ## Performance Tuning
+
 ### Query Optimization:
 - Use `EXPLAIN` and `EXPLAIN ANALYZE` to analyze query plans.
 ### Connection Pooling:
