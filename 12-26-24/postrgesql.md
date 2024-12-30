@@ -154,5 +154,6 @@ CREATE TABLE orders_partition (
 ```
 #### Replication and High Availability:
 - Set up streaming replication for redundancy.
+
 #### Logical Replication:
 - Use for publishing and subscribing to data changes.
