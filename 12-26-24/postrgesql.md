@@ -142,6 +142,7 @@ COMMIT;
 ### Learn how to connect PostgreSQL to applications using libraries:
 
 #### Node.js: `pg` library
+
 #### Python: `psycopg2`
 #### Java: `JDBC`
 
