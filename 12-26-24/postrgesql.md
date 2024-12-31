@@ -97,6 +97,7 @@ __Store arrays in columns:__
 CREATE TABLE tags (id SERIAL PRIMARY KEY, tag_list TEXT[]);
 INSERT INTO tags (tag_list) VALUES (ARRAY['tag1', 'tag2']);
 ```
+
 ### Indexing:
 __Learn index types: B-TREE, GIN, GIST, and how they affect query performance.__
 ```sql
