@@ -59,8 +59,7 @@ console.log(sumOfTwoIndices(nums, target)); // Output: [0, 1]
 
 /*
 
-Why the Hash Map Version is Better:
-Time Complexity: O(n), since you traverse the array once and use constant-time operations for the hash map.
-Space Complexity: O(n), for storing the hash map.
-
+# Why the Hash Map Version is Better:
+^ Time Complexity: O(n), since you traverse the array once and use constant-time operations for the hash map.
+^ Space Complexity: O(n), for storing the hash map.
 */
