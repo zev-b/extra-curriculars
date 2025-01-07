@@ -34,3 +34,33 @@ function sumOfTwoIndices(nums, target) {
 }
 
 console.log(sumOfTwoIndices(nums, target));
+
+/*
+* Optimized Solution (Using a Hash Map):
+* To improve performance, you can use a hash map to store elements and their indices as you iterate:
+*/
+
+function sumOfTwoIndices(nums, target) {
+    let map = new Map(); // Key: number, Value: index
+
+    for (let i = 0; i < nums.length; i++) {
+        let complement = target - nums[i];
+        if (map.has(complement)) {
+            return [map.get(complement), i];
+        }
+        map.set(nums[i], i); // Store the current number and its index
+    }
+    return null; // No solution found
+}
+
+// let nums = [2, 7, 11, 15];
+// let target = 9;
+console.log(sumOfTwoIndices(nums, target)); // Output: [0, 1]
+
+/*
+
+Why the Hash Map Version is Better:
+Time Complexity: O(n), since you traverse the array once and use constant-time operations for the hash map.
+Space Complexity: O(n), for storing the hash map.
+
+*/
