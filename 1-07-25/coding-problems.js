@@ -1,6 +1,7 @@
 /*
 Problem Statement:
-* Given an array of integers nums and an integer target, return the indices of the two numbers such that they add up to the target.
+* Given an array of integers nums and an integer target, 
+* return the indices of the two numbers such that they add up to the target.
 
 ?    Input: nums = [2, 7, 11, 15], target = 9
 ?    Output: [0, 1]
@@ -31,10 +32,12 @@ The outer loop (i) iterates over each element in the array.
 The inner loop (j) starts from i + 1 to avoid repeating pairs or using the same element twice.
 If the sum of nums[i] + nums[j] matches the target, the indices [i, j] are returned.
 */
-//# =========================================================================== 
+//# ======================================================================
+//# ====================================================================== 
 /*
 * Optimized Solution (Using a Hash Map):
-* To improve performance, you can use a hash map to store elements and their indices as you iterate:
+* To improve performance, 
+* you can use a hash map to store elements and their indices as you iterate:
 */
 
 function sumOfTwoIndices(nums, target) {
