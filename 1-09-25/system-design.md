@@ -72,38 +72,38 @@ When solving a system design problem, structure your thoughts:
 - __Understand Requirements__:
     - __Functional__: What the system does (e.g., stores photos).
     - __Non-functional__: Performance, scalability, reliability (e.g., handles 10M users).
-- Draw High-Level Architecture:
-    - Include components: clients, load balancers, servers, databases.
-- Discuss Trade-Offs:
-    - Example: SQL databases are structured but harder to scale compared to NoSQL.
-- Iterate:
+- __Draw High-Level Architecture__:
+    - __Include components__: clients, load balancers, servers, databases.
+- __Discuss Trade-Offs__:
+    - __Example__: SQL databases are structured but harder to scale compared to NoSQL.
+- __Iterate__:
     - Add more features or layers (e.g., security, monitoring).
 ## 4. Example Problems
 Here’s how to think through some common problems:
 
 __URL Shortening Service (e.g., TinyURL)__
-- Requirements:
+- __Requirements__:
     - Shorten a URL.
     - Redirect users when they click the shortened link.
-- Components:
-    - Web server: Accepts the URL, generates a unique key.
-    - Database: Maps keys to original URLs.
-    - Cache: For frequent lookups.
+- __Components__:
+    - __Web server__: Accepts the URL, generates a unique key.
+    - __Database__: Maps keys to original URLs.
+    - __Cache__: For frequent lookups.
 
 __Scalable File Upload System (e.g., Google Drive)__
-- Requirements:
+- __Requirements__:
     - Upload files of any size.
     - Share and download files.
-- Components:
-    - File storage: AWS S3, Google Cloud Storage.
-    - Metadata storage: SQL or NoSQL database.
-    - Queue: To process file indexing or virus scanning.
+- __Components__:
+    - __File storage__: AWS S3, Google Cloud Storage.
+    - __Metadata storage__: SQL or NoSQL database.
+    - __Queue__: To process file indexing or virus scanning.
 
 __Real-Time Chat App (e.g., WhatsApp)__
-- Requirements:
+- __Requirements__:
     - Send and receive messages in real-time.
     - Store chat history.
-- Components:
+- __Components__:
     - WebSocket connections for real-time communication.
     - Database for storing chat history.
     - Cache for frequent chats.
