@@ -64,7 +64,7 @@ This area covers the building blocks of any system. Understanding these concepts
     - __Example__: You upload a video to YouTube; the upload is quick because the video is processed (compressed, transcoded) in a queue in the background.
 - __CDNs__:
 
-    - Content Delivery Networks store data closer to users to reduce latency.
+    - **C**ontent **D**elivery **N**etworks store data closer to users to reduce latency.
     - __Example__: YouTube stores video copies worldwide to minimize buffering.
 ## 3. System Design Process
 When solving a system design problem, structure your thoughts:
