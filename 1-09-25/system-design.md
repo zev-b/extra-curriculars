@@ -32,29 +32,29 @@
 ## 1. Foundations of System Design
 This area covers the building blocks of any system. Understanding these concepts helps you tackle problems systematically.
 
-Scalability: The ability of a system to handle increased load by adding resources.
+- Scalability: The ability of a system to handle increased load by adding resources.
 
-Example: Facebook serves billions of users. If they gain millions of new users, their system should scale up seamlessly.
-Key Concepts: Horizontal scaling (adding servers), vertical scaling (upgrading servers).
-Reliability: Ensuring the system performs as expected, even during failures.
+    - Example: Facebook serves billions of users. If they gain millions of new users, their system should scale up seamlessly.
+    - Key Concepts: Horizontal scaling (adding servers), vertical scaling (upgrading servers).
+- Reliability: Ensuring the system performs as expected, even during failures.
 
-Example: Banks ensure transaction consistency even if there's a server crash.
-Techniques: Redundancy (multiple backups), monitoring systems.
-Components: Familiarize yourself with:
+    - Example: Banks ensure transaction consistency even if there's a server crash.
+    - Techniques: Redundancy (multiple backups), monitoring systems.
+- Components: Familiarize yourself with:
 
-Load Balancers: Distribute incoming traffic across servers to prevent overload.
-Databases: Store and retrieve data. Learn about relational (SQL) vs. non-relational (NoSQL) databases.
+    - Load Balancers: Distribute incoming traffic across servers to prevent overload.
+    - Databases: Store and retrieve data. Learn about relational (SQL) vs. non-relational (NoSQL) databases.
 ## 2. Key Topics to Study
-Client-Server Architecture: The backbone of most systems.
+- Client-Server Architecture: The backbone of most systems.
 
-A client (browser/app) sends requests to a server (backend). The server processes the request and sends back a response.
-Example: You open Twitter; your browser (client) fetches tweets from Twitter’s servers.
-Databases:
+    - A client (browser/app) sends requests to a server (backend). The server processes the request and sends back a response.
+    - Example: You open Twitter; your browser (client) fetches tweets from Twitter’s servers.
+- Databases:
 
-SQL: Structured and uses tables (e.g., PostgreSQL, MySQL). Great for complex queries.
-NoSQL: Flexible and optimized for scalability (e.g., MongoDB, DynamoDB).
-Concepts like indexing (for faster lookups) and sharding (splitting data across servers) are essential.
-Caching:
+    - SQL: Structured and uses tables (e.g., PostgreSQL, MySQL). Great for complex queries.
+    - NoSQL: Flexible and optimized for scalability (e.g., MongoDB, DynamoDB).
+    - Concepts like indexing (for faster lookups) and sharding (splitting data across servers) are essential.
+- Caching:
 
 Stores frequently accessed data temporarily for faster access.
 Example: Netflix caches thumbnails of movies on CDN servers, so you see them instantly.
