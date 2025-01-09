@@ -69,42 +69,44 @@ This area covers the building blocks of any system. Understanding these concepts
 ## 3. System Design Process
 When solving a system design problem, structure your thoughts:
 
-Understand Requirements:
-Functional: What the system does (e.g., stores photos).
-Non-functional: Performance, scalability, reliability (e.g., handles 10M users).
-Draw High-Level Architecture:
-Include components: clients, load balancers, servers, databases.
-Discuss Trade-Offs:
-Example: SQL databases are structured but harder to scale compared to NoSQL.
-Iterate:
-Add more features or layers (e.g., security, monitoring).
+- Understand Requirements:
+    - Functional: What the system does (e.g., stores photos).
+    - Non-functional: Performance, scalability, reliability (e.g., handles 10M users).
+- Draw High-Level Architecture:
+    - Include components: clients, load balancers, servers, databases.
+- Discuss Trade-Offs:
+    - Example: SQL databases are structured but harder to scale compared to NoSQL.
+- Iterate:
+    - Add more features or layers (e.g., security, monitoring).
 ## 4. Example Problems
 Here’s how to think through some common problems:
 
-URL Shortening Service (e.g., TinyURL)
-Requirements:
-Shorten a URL.
-Redirect users when they click the shortened link.
-Components:
-Web server: Accepts the URL, generates a unique key.
-Database: Maps keys to original URLs.
-Cache: For frequent lookups.
-Scalable File Upload System (e.g., Google Drive)
-Requirements:
-Upload files of any size.
-Share and download files.
-Components:
-File storage: AWS S3, Google Cloud Storage.
-Metadata storage: SQL or NoSQL database.
-Queue: To process file indexing or virus scanning.
-Real-Time Chat App (e.g., WhatsApp)
-Requirements:
-Send and receive messages in real-time.
-Store chat history.
-Components:
-WebSocket connections for real-time communication.
-Database for storing chat history.
-Cache for frequent chats.
+__URL Shortening Service (e.g., TinyURL)__
+- Requirements:
+    - Shorten a URL.
+    - Redirect users when they click the shortened link.
+- Components:
+    - Web server: Accepts the URL, generates a unique key.
+    - Database: Maps keys to original URLs.
+    - Cache: For frequent lookups.
+
+__Scalable File Upload System (e.g., Google Drive)__
+- Requirements:
+    - Upload files of any size.
+    - Share and download files.
+- Components:
+    - File storage: AWS S3, Google Cloud Storage.
+    - Metadata storage: SQL or NoSQL database.
+    - Queue: To process file indexing or virus scanning.
+
+__Real-Time Chat App (e.g., WhatsApp)__
+- Requirements:
+    - Send and receive messages in real-time.
+    - Store chat history.
+- Components:
+    - WebSocket connections for real-time communication.
+    - Database for storing chat history.
+    - Cache for frequent chats.
 ## 5. Resources
 Books:
 
