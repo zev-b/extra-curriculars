@@ -107,18 +107,7 @@ __Real-Time Chat App (e.g., WhatsApp)__
     - WebSocket connections for real-time communication.
     - Database for storing chat history.
     - Cache for frequent chats.
-## 5. Resources
-Books:
 
-Designing Data-Intensive Applications: A comprehensive guide for building robust systems.
-The System Design Interview: Targeted for interview preparation.
-Courses:
-
-Grokking the System Design Interview: Hands-on problems with diagrams.
-Pluralsight/SystemExpert: Beginner-friendly.
-Websites:
-
-System Design Primer (GitHub): Open-source resources with visuals.
 
 
 
