@@ -56,16 +56,16 @@ This area covers the building blocks of any system. Understanding these concepts
     - Concepts like indexing (for faster lookups) and sharding (splitting data across servers) are essential.
 - Caching:
 
-Stores frequently accessed data temporarily for faster access.
-Example: Netflix caches thumbnails of movies on CDN servers, so you see them instantly.
-Queues:
+    - Stores frequently accessed data temporarily for faster access.
+    - Example: Netflix caches thumbnails of movies on CDN servers, so you see them instantly.
+- Queues:
 
-Allow asynchronous processing.
-Example: You upload a video to YouTube; the upload is quick because the video is processed (compressed, transcoded) in a queue in the background.
-CDNs:
+    - Allow asynchronous processing.
+    - Example: You upload a video to YouTube; the upload is quick because the video is processed (compressed, transcoded) in a queue in the background.
+- CDNs:
 
-Content Delivery Networks store data closer to users to reduce latency.
-Example: YouTube stores video copies worldwide to minimize buffering.
+    - Content Delivery Networks store data closer to users to reduce latency.
+    - Example: YouTube stores video copies worldwide to minimize buffering.
 ## 3. System Design Process
 When solving a system design problem, structure your thoughts:
 
