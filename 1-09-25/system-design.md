@@ -32,46 +32,46 @@
 ## 1. Foundations of System Design
 This area covers the building blocks of any system. Understanding these concepts helps you tackle problems systematically.
 
-- Scalability: The ability of a system to handle increased load by adding resources.
+- __Scalability__: The ability of a system to handle increased load by adding resources.
 
-    - Example: Facebook serves billions of users. If they gain millions of new users, their system should scale up seamlessly.
-    - Key Concepts: Horizontal scaling (adding servers), vertical scaling (upgrading servers).
-- Reliability: Ensuring the system performs as expected, even during failures.
+    - __Example__: Facebook serves billions of users. If they gain millions of new users, their system should scale up seamlessly.
+    - __Key Concepts__: Horizontal scaling (adding servers), vertical scaling (upgrading servers).
+- __Reliability__: Ensuring the system performs as expected, even during failures.
 
-    - Example: Banks ensure transaction consistency even if there's a server crash.
-    - Techniques: Redundancy (multiple backups), monitoring systems.
-- Components: Familiarize yourself with:
+    - __Example__: Banks ensure transaction consistency even if there's a server crash.
+    - __Techniques__: Redundancy (multiple backups), monitoring systems.
+- __Components__: Familiarize yourself with:
 
-    - Load Balancers: Distribute incoming traffic across servers to prevent overload.
-    - Databases: Store and retrieve data. Learn about relational (SQL) vs. non-relational (NoSQL) databases.
+    - __Load Balancers__: Distribute incoming traffic across servers to prevent overload.
+    - __Databases__: Store and retrieve data. Learn about relational (SQL) vs. non-relational (NoSQL) databases.
 ## 2. Key Topics to Study
-- Client-Server Architecture: The backbone of most systems.
+- __Client-Server Architecture__: The backbone of most systems.
 
     - A client (browser/app) sends requests to a server (backend). The server processes the request and sends back a response.
-    - Example: You open Twitter; your browser (client) fetches tweets from Twitter’s servers.
-- Databases:
+    - __Example__: You open Twitter; your browser (client) fetches tweets from Twitter’s servers.
+- __Databases__:
 
-    - SQL: Structured and uses tables (e.g., PostgreSQL, MySQL). Great for complex queries.
-    - NoSQL: Flexible and optimized for scalability (e.g., MongoDB, DynamoDB).
+    - __SQL__: Structured and uses tables (e.g., PostgreSQL, MySQL). Great for complex queries.
+    - __NoSQL__: Flexible and optimized for scalability (e.g., MongoDB, DynamoDB).
     - Concepts like indexing (for faster lookups) and sharding (splitting data across servers) are essential.
-- Caching:
+- __Caching__:
 
     - Stores frequently accessed data temporarily for faster access.
-    - Example: Netflix caches thumbnails of movies on CDN servers, so you see them instantly.
-- Queues:
+    - __Example__: Netflix caches thumbnails of movies on CDN servers, so you see them instantly.
+- __Queues__:
 
     - Allow asynchronous processing.
-    - Example: You upload a video to YouTube; the upload is quick because the video is processed (compressed, transcoded) in a queue in the background.
-- CDNs:
+    - __Example__: You upload a video to YouTube; the upload is quick because the video is processed (compressed, transcoded) in a queue in the background.
+- __CDNs__:
 
     - Content Delivery Networks store data closer to users to reduce latency.
-    - Example: YouTube stores video copies worldwide to minimize buffering.
+    - __Example__: YouTube stores video copies worldwide to minimize buffering.
 ## 3. System Design Process
 When solving a system design problem, structure your thoughts:
 
-- Understand Requirements:
-    - Functional: What the system does (e.g., stores photos).
-    - Non-functional: Performance, scalability, reliability (e.g., handles 10M users).
+- __Understand Requirements__:
+    - __Functional__: What the system does (e.g., stores photos).
+    - __Non-functional__: Performance, scalability, reliability (e.g., handles 10M users).
 - Draw High-Level Architecture:
     - Include components: clients, load balancers, servers, databases.
 - Discuss Trade-Offs:
