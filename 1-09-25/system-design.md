@@ -23,7 +23,7 @@
     - Design a scalable file upload system (like Google Drive).
     - Design a real-time chat application.
 
-5. Resources
+- __5. Resources__:
     - __Books__: Designing Data-Intensive Applications by Martin Kleppmann.
     - __Courses__: Grokking the System Design Interview (by Educative).
     - __Websites__: System Design Primer (on GitHub).
