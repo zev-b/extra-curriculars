@@ -48,7 +48,7 @@ This area covers the building blocks of any system. Understanding these concepts
 
     - __Load Balancers__: Distribute incoming traffic across servers to prevent overload.
     - __Databases__: Store and retrieve data. Learn about relational (SQL) vs. non-relational (NoSQL) databases.
-## 2. Key Topics to Study
+## 2. __Key Topics to Study__
 - __Client-Server Architecture__: The backbone of most systems.
 
     - A client (browser/app) sends requests to a server (backend). The server processes the request and sends back a response.
@@ -70,7 +70,7 @@ This area covers the building blocks of any system. Understanding these concepts
 
     - **C**ontent **D**elivery **N**etworks store data closer to users to reduce latency.
     - __Example__: YouTube stores video copies worldwide to minimize buffering.
-## 3. System Design Process
+## 3. __System Design Process__
 When solving a system design problem, structure your thoughts:
 
 - __Understand Requirements__:
@@ -82,7 +82,7 @@ When solving a system design problem, structure your thoughts:
     - __Example__: SQL databases are structured but harder to scale compared to NoSQL.
 - __Iterate__:
     - Add more features or layers (e.g., security, monitoring).
-## 4. Example Problems
+## 4. __Example Problems__
 Here’s how to think through some common problems:
 
 __URL Shortening Service (e.g., TinyURL)__
