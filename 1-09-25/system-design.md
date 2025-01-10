@@ -33,7 +33,7 @@
 
 
 
-## 1. Foundations of System Design
+## 1. __Foundations of System Design__
 This area covers the building blocks of any system. Understanding these concepts helps you tackle problems systematically.
 
 - __Scalability__: The ability of a system to handle increased load by adding resources.
