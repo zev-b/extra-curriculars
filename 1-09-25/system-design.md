@@ -3,6 +3,7 @@
     - Learn about common components like load balancers, caching, and databases.
     - Familiarize yourself with database design basics (e.g., normalization, indexing).
     - Understand how to design APIs, including REST and GraphQL.
+
 - [2. Key Topics to Study](#2-key-topics-to-study)
     - __Client-server architecture__: Understand how clients interact with servers.
     - __Databases__: SQL vs. NoSQL, sharding, replication.
@@ -10,15 +11,18 @@
     - __Queues__: Message queues like RabbitMQ or Kafka.
     - __CDNs__: How content delivery networks improve latency.
     - __Load balancing__: Techniques to distribute traffic.
+
 - [3. System Design Process](#3-system-design-process)
     - Break the problem into manageable components.
     - __Start with requirements__: functional (what it does) and non-functional (e.g., scalability).
     - Draw out high-level architecture diagrams.
     - Discuss trade-offs and constraints.
+
 - [4. Example Problems](#4-example-problems)
     - Design a URL shortening service (like TinyURL).
     - Design a scalable file upload system (like Google Drive).
     - Design a real-time chat application.
+
 5. Resources
     - __Books__: Designing Data-Intensive Applications by Martin Kleppmann.
     - __Courses__: Grokking the System Design Interview (by Educative).
