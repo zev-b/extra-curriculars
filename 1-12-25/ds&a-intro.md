@@ -78,11 +78,11 @@ __Use Cases__:
 - Building more complex data structures like heaps and stacks.
 
 __Example Problems__:
-> __Two Sum__: Given an array of integers and a target sum, find two numbers such that they add up to the target.
+> [__Two Sum__: Given an array of integers and a target sum, find two numbers such that they add up to the target.]()
 
 *Example*: Input: `nums = [2, 7, 11, 15]`, `target = 9 -> Output: [0, 1]`
 
-> __Maximum Subarray__: Find the contiguous subarray with the largest sum.
+> [__Maximum Subarray__: Find the contiguous subarray with the largest sum.]()
 
 *Example*: Input: `nums = [-2, 1, -3, 4, -1, 2, 1, -5, 4]` -> `Output: 6 (subarray [4, -1, 2, 1])`
 
@@ -92,3 +92,4 @@ __Practice Problems__:
 steps to the right.
 - Merge two sorted arrays into one sorted array.
 - Find the intersection of two arrays.
+
