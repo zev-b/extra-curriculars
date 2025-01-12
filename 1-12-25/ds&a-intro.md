@@ -78,7 +78,7 @@ __Use Cases__:
 - Building more complex data structures like heaps and stacks.
 
 __Example Problems__:
-> [__Two Sum__: Given an array of integers and a target sum, find two numbers such that they add up to the target.]()
+> [__Two Sum__: Given an array of integers and a target sum, find two numbers such that they add up to the target.](#example-problem-1-two-sum)
 
 *Example*: Input: `nums = [2, 7, 11, 15]`, `target = 9 -> Output: [0, 1]`
 
@@ -93,3 +93,99 @@ steps to the right.
 - Merge two sorted arrays into one sorted array.
 - Find the intersection of two arrays.
 
+### Example Problem 1: *Two Sum*
+```
+Given an array nums and a target sum target, find two indices such that their corresponding values add up to target.
+```
+Solution Steps:
+1. Use a hash map to store numbers and their indices as you iterate through the array.
+2. For each number, calculate its complement (`target - current number`).
+3. Check if the complement exists in the hash map:
+    - If it does, return the indices.
+    - Otherwise, store the current number and its index in the hash map.
+
+```js
+function twoSum(nums, target) {
+    const map = new Map(); // To store number and its index
+    
+    for (let i = 0; i < nums.length; i++) {
+        const complement = target - nums[i]; // Calculate the complement
+        
+        if (map.has(complement)) {
+            return [map.get(complement), i]; // Return indices if complement is found
+        }
+        
+        map.set(nums[i], i); // Store the current number with its index
+    }
+    
+    return []; // Return empty if no solution
+}
+
+// Example
+console.log(twoSum([2, 7, 11, 15], 9)); // Output: [0, 1]
+
+```
+
+### Example Problem 2: *Maximum Subarray* (Kadane’s Algorithm)
+```
+Find the contiguous subarray with the largest sum.
+```
+Solution Steps:
+1. Use a variable `currentSum` to track the sum of the current subarray.
+2. Use a variable `maxSum` to track the maximum sum seen so far.
+3. Iterate through the array:
+    - Add the current element to `currentSum`.
+    - If `currentSum` becomes negative, reset it to 0 (it won't contribute to a maximum sum).
+    - Update `maxSum` with the maximum of `maxSum` and `currentSum`.
+4. Return `maxSum`.
+```js
+function maxSubArray(nums) {
+    let maxSum = nums[0]; // Initialize with the first element
+    let currentSum = 0;
+
+    for (let num of nums) {
+        currentSum = Math.max(num, currentSum + num); // Update current sum
+        maxSum = Math.max(maxSum, currentSum); // Update max sum
+    }
+
+    return maxSum;
+}
+
+// Example
+console.log(maxSubArray([-2, 1, -3, 4, -1, 2, 1, -5, 4])); // Output: 6
+
+```
+
+### Practice Problem 1: *Rotate Array*
+```
+Rotate an array 𝑘 steps to the right.
+```
+
+Solution Steps:
+1. Use the modulus operator to handle cases where `𝑘 > 𝑛𝑢𝑚𝑠.𝑙𝑒𝑛𝑔𝑡ℎ`
+2. Reverse the entire array.
+3. Reverse the first `𝑘` elements.
+4. Reverse the remaining elements.
+```js
+function rotate(nums, k) {
+    k = k % nums.length; // Handle cases where k > nums.length
+    
+    // Helper function to reverse a portion of the array
+    function reverse(start, end) {
+        while (start < end) {
+            [nums[start], nums[end]] = [nums[end], nums[start]];
+            start++;
+            end--;
+        }
+    }
+    
+    nums.reverse(); // Step 1: Reverse the entire array
+    reverse(0, k - 1); // Step 2: Reverse the first k elements
+    reverse(k, nums.length - 1); // Step 3: Reverse the remaining elements
+}
+
+// Example
+const nums = [1, 2, 3, 4, 5, 6, 7];
+rotate(nums, 3);
+console.log(nums); // Output: [5, 6, 7, 1, 2, 3, 4]
+```
