@@ -222,5 +222,31 @@ function mergeSortedArrays(arr1, arr2) {
 
 // Example
 console.log(mergeSortedArrays([1, 3, 5], [2, 4, 6])); // Output: [1, 2, 3, 4, 5, 6]
+```
 
+### Practice Problem 3: *Intersection of Two Arrays*
+```
+Problem: Find the common elements between two arrays.
+```
+Solution Steps:
+1. Use a hash set to store elements from one array.
+2. Iterate through the second array and check if an element exists in the set.
+3. Return the common elements.
+```javascript
+function intersection(nums1, nums2) {
+    const set1 = new Set(nums1);
+    const result = [];
+
+    for (let num of nums2) {
+        if (set1.has(num)) {
+            result.push(num);
+            set1.delete(num); // Ensure no duplicates in the result
+        }
+    }
+
+    return result;
+}
+
+// Example
+console.log(intersection([1, 2, 2, 1], [2, 2])); // Output: [2]
 ```
