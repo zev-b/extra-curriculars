@@ -439,3 +439,238 @@ function countAndSay(n) {
 console.log(countAndSay(1)); // Output: "1"
 console.log(countAndSay(4)); // Output: "1211"
 ```
+
+
+
+Step 3: Linked Lists
+Linked lists are fundamental data structures in computer science. They are often tested in interviews due to their simplicity and versatility.
+
+Concepts to Understand
+Definition:
+
+A linked list is a linear data structure where each element (node) points to the next.
+Types:
+Singly Linked List: Nodes have a single pointer to the next node.
+Doubly Linked List: Nodes have pointers to both the previous and next nodes.
+Circular Linked List: The last node points back to the head.
+Common Operations:
+
+Traversal
+Insertion (at the head, tail, or middle)
+Deletion (by value or position)
+Reversal
+Node Structure: In JavaScript, a node can be represented as:
+
+javascript
+Copy code
+class Node {
+    constructor(value) {
+        this.value = value;
+        this.next = null;
+    }
+}
+Linked List Structure:
+javascript
+Copy code
+class LinkedList {
+    constructor() {
+        this.head = null;
+        this.size = 0;
+    }
+}
+Example Problems
+1. Reverse a Linked List
+Problem: Reverse a singly linked list.
+
+Steps:
+
+Use three pointers: prev, current, and next.
+Traverse the list and reverse the direction of the pointers.
+Set the last node as the new head.
+Code:
+
+javascript
+Copy code
+function reverseLinkedList(head) {
+    let prev = null;
+    let current = head;
+
+    while (current !== null) {
+        let next = current.next; // Store next node
+        current.next = prev;     // Reverse the pointer
+        prev = current;          // Move prev forward
+        current = next;          // Move current forward
+    }
+
+    return prev; // New head
+}
+
+// Example Usage
+const head = new Node(1);
+head.next = new Node(2);
+head.next.next = new Node(3);
+let reversedHead = reverseLinkedList(head);
+
+// Print reversed list
+while (reversedHead) {
+    console.log(reversedHead.value); // Output: 3 -> 2 -> 1
+    reversedHead = reversedHead.next;
+}
+2. Detect a Cycle in a Linked List
+Problem: Determine if a linked list has a cycle (a node points back to a previous node).
+
+Steps:
+
+Use two pointers: a slow pointer (slow) and a fast pointer (fast).
+Move slow by one step and fast by two steps.
+If they meet, a cycle exists. If fast reaches the end, no cycle exists.
+Code:
+
+javascript
+Copy code
+function hasCycle(head) {
+    let slow = head;
+    let fast = head;
+
+    while (fast !== null && fast.next !== null) {
+        slow = slow.next;
+        fast = fast.next.next;
+
+        if (slow === fast) return true; // Cycle detected
+    }
+
+    return false; // No cycle
+}
+
+// Example Usage
+const head = new Node(1);
+head.next = new Node(2);
+head.next.next = new Node(3);
+head.next.next.next = head.next; // Creates a cycle
+console.log(hasCycle(head)); // Output: true
+3. Merge Two Sorted Linked Lists
+Problem: Merge two sorted linked lists into a single sorted linked list.
+
+Steps:
+
+Use a dummy node to simplify handling the head.
+Compare the values of nodes from both lists.
+Attach the smaller node to the result and advance the pointer.
+Code:
+
+javascript
+Copy code
+function mergeTwoLists(list1, list2) {
+    let dummy = new Node(-1); // Dummy node
+    let current = dummy;
+
+    while (list1 !== null && list2 !== null) {
+        if (list1.value < list2.value) {
+            current.next = list1;
+            list1 = list1.next;
+        } else {
+            current.next = list2;
+            list2 = list2.next;
+        }
+        current = current.next;
+    }
+
+    // Attach remaining nodes
+    current.next = list1 !== null ? list1 : list2;
+
+    return dummy.next; // Return merged list (skip dummy node)
+}
+
+// Example Usage
+const list1 = new Node(1);
+list1.next = new Node(3);
+list1.next.next = new Node(5);
+
+const list2 = new Node(2);
+list2.next = new Node(4);
+list2.next.next = new Node(6);
+
+let mergedList = mergeTwoLists(list1, list2);
+
+// Print merged list
+while (mergedList) {
+    console.log(mergedList.value); // Output: 1 -> 2 -> 3 -> 4 -> 5 -> 6
+    mergedList = mergedList.next;
+}
+Practice Problems
+1. Find the Middle of a Linked List
+Steps:
+
+Use two pointers: a slow pointer (slow) and a fast pointer (fast).
+Move slow one step at a time and fast two steps at a time.
+When fast reaches the end, slow will be at the middle.
+Code:
+
+javascript
+Copy code
+function findMiddle(head) {
+    let slow = head;
+    let fast = head;
+
+    while (fast !== null && fast.next !== null) {
+        slow = slow.next;
+        fast = fast.next.next;
+    }
+
+    return slow; // Middle node
+}
+
+// Example Usage
+const head = new Node(1);
+head.next = new Node(2);
+head.next.next = new Node(3);
+head.next.next.next = new Node(4);
+head.next.next.next.next = new Node(5);
+
+console.log(findMiddle(head).value); // Output: 3
+2. Remove Nth Node from End of List
+Steps:
+
+Use two pointers: first and second.
+Move first 
+𝑛
+n steps ahead.
+Move both pointers one step at a time until first reaches the end.
+second.next will point to the node to be removed.
+Code:
+
+javascript
+Copy code
+function removeNthFromEnd(head, n) {
+    let dummy = new Node(-1);
+    dummy.next = head;
+    let first = dummy, second = dummy;
+
+    for (let i = 0; i <= n; i++) {
+        first = first.next;
+    }
+
+    while (first !== null) {
+        first = first.next;
+        second = second.next;
+    }
+
+    second.next = second.next.next; // Remove nth node
+
+    return dummy.next; // Return updated list
+}
+
+// Example Usage
+const head = new Node(1);
+head.next = new Node(2);
+head.next.next = new Node(3);
+head.next.next.next = new Node(4);
+head.next.next.next.next = new Node(5);
+
+let updatedList = removeNthFromEnd(head, 2);
+
+// Print updated list
+while (updatedList) {
+    console.log(updatedList.value); // Output: 1 -> 2 -> 3 -> 5
+    updatedList = updatedList.next;
+}
