@@ -487,9 +487,9 @@ Problem: Reverse a singly linked list.
 
 Steps:
 
-Use three pointers: prev, current, and next.
-Traverse the list and reverse the direction of the pointers.
-Set the last node as the new head.
+- Use three pointers: prev, current, and next.
+- Traverse the list and reverse the direction of the pointers.
+- Set the last node as the new head.
 
 ```javascript
 function reverseLinkedList(head) {
@@ -518,14 +518,15 @@ while (reversedHead) {
     reversedHead = reversedHead.next;
 }
 ```
+
 2. Detect a Cycle in a Linked List
 Problem: Determine if a linked list has a cycle (a node points back to a previous node).
 
 Steps:
 
-Use two pointers: a slow pointer (slow) and a fast pointer (fast).
-Move slow by one step and fast by two steps.
-If they meet, a cycle exists. If fast reaches the end, no cycle exists.
+- Use two pointers: a slow pointer (slow) and a fast pointer (fast).
+- Move slow by one step and fast by two steps.
+- If they meet, a cycle exists. If fast reaches the end, no cycle exists.
 
 ```javascript
 function hasCycle(head) {
@@ -549,14 +550,15 @@ head.next.next = new Node(3);
 head.next.next.next = head.next; // Creates a cycle
 console.log(hasCycle(head)); // Output: true
 ```
+
 3. Merge Two Sorted Linked Lists
 Problem: Merge two sorted linked lists into a single sorted linked list.
 
 Steps:
 
-Use a dummy node to simplify handling the head.
-Compare the values of nodes from both lists.
-Attach the smaller node to the result and advance the pointer.
+- Use a dummy node to simplify handling the head.
+- Compare the values of nodes from both lists.
+- Attach the smaller node to the result and advance the pointer.
 
 ```javascript
 function mergeTwoLists(list1, list2) {
@@ -601,10 +603,9 @@ Practice Problems
 1. Find the Middle of a Linked List
 Steps:
 
-Use two pointers: a slow pointer (slow) and a fast pointer (fast).
-Move slow one step at a time and fast two steps at a time.
-When fast reaches the end, slow will be at the middle.
-Code:
+- Use two pointers: a slow pointer (slow) and a fast pointer (fast).
+- Move slow one step at a time and fast two steps at a time.
+- When fast reaches the end, slow will be at the middle.
 
 ```javascript
 function findMiddle(head) {
