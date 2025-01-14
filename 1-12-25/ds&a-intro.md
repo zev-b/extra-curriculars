@@ -442,8 +442,8 @@ console.log(countAndSay(4)); // Output: "1211"
 
 
 
-Step 3: Linked Lists
-Linked lists are fundamental data structures in computer science. They are often tested in interviews due to their simplicity and versatility.
+## Step 3: Linked Lists
+*Linked lists are fundamental data structures in computer science. They are often tested in interviews due to their simplicity and versatility.*
 
 Concepts to Understand
 Definition:
@@ -461,23 +461,23 @@ Deletion (by value or position)
 Reversal
 Node Structure: In JavaScript, a node can be represented as:
 
-javascript
-Copy code
+```javascript
 class Node {
     constructor(value) {
         this.value = value;
         this.next = null;
     }
 }
+```
 Linked List Structure:
-javascript
-Copy code
+```javascript
 class LinkedList {
     constructor() {
         this.head = null;
         this.size = 0;
     }
 }
+```
 Example Problems
 1. Reverse a Linked List
 Problem: Reverse a singly linked list.
@@ -487,10 +487,8 @@ Steps:
 Use three pointers: prev, current, and next.
 Traverse the list and reverse the direction of the pointers.
 Set the last node as the new head.
-Code:
 
-javascript
-Copy code
+```javascript
 function reverseLinkedList(head) {
     let prev = null;
     let current = head;
@@ -516,6 +514,7 @@ while (reversedHead) {
     console.log(reversedHead.value); // Output: 3 -> 2 -> 1
     reversedHead = reversedHead.next;
 }
+```
 2. Detect a Cycle in a Linked List
 Problem: Determine if a linked list has a cycle (a node points back to a previous node).
 
@@ -524,10 +523,8 @@ Steps:
 Use two pointers: a slow pointer (slow) and a fast pointer (fast).
 Move slow by one step and fast by two steps.
 If they meet, a cycle exists. If fast reaches the end, no cycle exists.
-Code:
 
-javascript
-Copy code
+```javascript
 function hasCycle(head) {
     let slow = head;
     let fast = head;
@@ -548,6 +545,7 @@ head.next = new Node(2);
 head.next.next = new Node(3);
 head.next.next.next = head.next; // Creates a cycle
 console.log(hasCycle(head)); // Output: true
+```
 3. Merge Two Sorted Linked Lists
 Problem: Merge two sorted linked lists into a single sorted linked list.
 
@@ -556,10 +554,8 @@ Steps:
 Use a dummy node to simplify handling the head.
 Compare the values of nodes from both lists.
 Attach the smaller node to the result and advance the pointer.
-Code:
 
-javascript
-Copy code
+```javascript
 function mergeTwoLists(list1, list2) {
     let dummy = new Node(-1); // Dummy node
     let current = dummy;
@@ -597,6 +593,7 @@ while (mergedList) {
     console.log(mergedList.value); // Output: 1 -> 2 -> 3 -> 4 -> 5 -> 6
     mergedList = mergedList.next;
 }
+```
 Practice Problems
 1. Find the Middle of a Linked List
 Steps:
@@ -606,8 +603,7 @@ Move slow one step at a time and fast two steps at a time.
 When fast reaches the end, slow will be at the middle.
 Code:
 
-javascript
-Copy code
+```javascript
 function findMiddle(head) {
     let slow = head;
     let fast = head;
@@ -628,19 +624,16 @@ head.next.next.next = new Node(4);
 head.next.next.next.next = new Node(5);
 
 console.log(findMiddle(head).value); // Output: 3
+```
 2. Remove Nth Node from End of List
 Steps:
 
-Use two pointers: first and second.
-Move first 
-𝑛
-n steps ahead.
-Move both pointers one step at a time until first reaches the end.
-second.next will point to the node to be removed.
-Code:
+- Use two pointers: first and second.
+- Move first 𝑛 steps ahead.
+- Move both pointers one step at a time until first reaches the end.
+`second.next` will point to the node to be removed.
 
-javascript
-Copy code
+```javascript
 function removeNthFromEnd(head, n) {
     let dummy = new Node(-1);
     dummy.next = head;
@@ -674,3 +667,4 @@ while (updatedList) {
     console.log(updatedList.value); // Output: 1 -> 2 -> 3 -> 5
     updatedList = updatedList.next;
 }
+```
