@@ -675,30 +675,30 @@ while (updatedList) {
 
 
 
-Step 4: Stacks
-A stack is a linear data structure that follows the LIFO (Last In, First Out) principle. This means that the last item added to the stack is the first to be removed. Think of a stack of plates—when you add a new plate, it goes on top, and when you remove a plate, you take the top one first.
+## Step 4: Stacks
+*A stack is a linear data structure that follows the LIFO (Last In, First Out) principle. This means that the last item added to the stack is the first to be removed. Think of a stack of plates—when you add a new plate, it goes on top, and when you remove a plate, you take the top one first.*
 
-Concepts to Understand
+### Concepts to Understand
 Common Operations:
 
-Push: Add an element to the top of the stack.
-Pop: Remove and return the top element from the stack.
-Peek/Top: Return the top element without removing it.
-isEmpty: Check if the stack is empty.
-Size: Return the number of elements in the stack.
+- Push: Add an element to the top of the stack.
+- Pop: Remove and return the top element from the stack.
+- Peek/Top: Return the top element without removing it.
+- isEmpty: Check if the stack is empty.
+- Size: Return the number of elements in the stack.
+
 Applications:
 
-Function calls (call stack).
-Undo/Redo functionality in text editors.
-Parsing expressions (e.g., checking balanced parentheses).
-Backtracking problems (e.g., solving mazes, DFS in graphs).
-Implementation: Stacks can be implemented using arrays or linked lists.
+- Function calls (call stack).
+- Undo/Redo functionality in text editors.
+- Parsing expressions (e.g., checking balanced parentheses).
+- Backtracking problems (e.g., solving mazes, DFS in graphs).
+- Implementation: Stacks can be implemented using arrays or linked lists.
 
 Stack Implementation in JavaScript
 Using an array:
 
-javascript
-Copy code
+```javascript
 class Stack {
     constructor() {
         this.stack = [];
@@ -734,21 +734,21 @@ stack.push(20);
 console.log(stack.peek()); // Output: 20
 console.log(stack.pop());  // Output: 20
 console.log(stack.size()); // Output: 1
-Example Problems
-1. Valid Parentheses
+```
+
+## Example Problems
+### 1. Valid Parentheses
 Problem: Given a string containing (), {}, and [], determine if the input string is valid (each opening bracket has a matching closing bracket in the correct order).
 
 Steps:
 
-Use a stack to store opening brackets.
-Traverse the string:
-If it's an opening bracket, push it onto the stack.
-If it's a closing bracket, check if the top of the stack matches it. If not, return false.
-At the end, the stack should be empty for a valid string.
-Code:
+- Use a stack to store opening brackets.
+- Traverse the string:
+- If it's an opening bracket, push it onto the stack.
+- If it's a closing bracket, check if the top of the stack matches it. If not, return false.
+- At the end, the stack should be empty for a valid string.
 
-javascript
-Copy code
+```javascript
 function isValidParentheses(s) {
     const stack = [];
     const mapping = {
@@ -775,20 +775,19 @@ function isValidParentheses(s) {
 console.log(isValidParentheses("()"));       // Output: true
 console.log(isValidParentheses("([{}])"));   // Output: true
 console.log(isValidParentheses("(]"));       // Output: false
-2. Min Stack
+```
+### 2. Min Stack
 Problem: Design a stack that supports push, pop, top, and retrieving the minimum element in constant time.
 
 Steps:
 
-Maintain two stacks:
-One for the elements (stack).
-One for the minimum values (minStack).
-On push, compare the new element with the current minimum and update the minStack.
-On pop, also pop from the minStack.
-Code:
+- Maintain two stacks:
+    - One for the elements (stack).
+    - One for the minimum values (minStack).
+- On push, compare the new element with the current minimum and update the minStack.
+- On pop, also pop from the minStack.
 
-javascript
-Copy code
+```javascript
 class MinStack {
     constructor() {
         this.stack = [];
@@ -827,20 +826,20 @@ minStack.push(1);
 console.log(minStack.getMin()); // Output: 1
 minStack.pop();
 console.log(minStack.getMin()); // Output: 2
-3. Evaluate Reverse Polish Notation
+```
+
+### 3. Evaluate Reverse Polish Notation
 Problem: Evaluate the value of an arithmetic expression in Reverse Polish Notation (RPN). Valid operators are +, -, *, /. Operands may be integers.
 
 Steps:
 
-Use a stack to store numbers.
-Traverse the tokens:
-If it's a number, push it onto the stack.
-If it's an operator, pop the top two numbers, apply the operator, and push the result.
-At the end, the stack will contain a single value.
-Code:
+- Use a stack to store numbers.
+- Traverse the tokens:
+- If it's a number, push it onto the stack.
+- If it's an operator, pop the top two numbers, apply the operator, and push the result.
+- At the end, the stack will contain a single value.
 
-javascript
-Copy code
+```javascript
 function evalRPN(tokens) {
     const stack = [];
 
@@ -874,43 +873,40 @@ function evalRPN(tokens) {
 console.log(evalRPN(["2", "1", "+", "3", "*"]));       // Output: 9
 console.log(evalRPN(["4", "13", "5", "/", "+"]));      // Output: 6
 console.log(evalRPN(["10", "6", "9", "3", "/", "*", "-"])); // Output: 4
-Practice Problems
-1. Next Greater Element
+```
+
+## Practice Problems
+### 1. Next Greater Element
 Find the next greater element for each element in an array.
 
-2. Simplify Path
+### 2. Simplify Path
 Given a Unix-style path, simplify it (e.g., /home/.././folder → /folder).
 
-3. Largest Rectangle in Histogram
+### 3. Largest Rectangle in Histogram
 Given an array of bar heights, find the largest rectangular area that can fit under the histogram.
 
-Would you like detailed breakdowns of any of these problems?
 
 
 
+## Step 5: Queues
+*A queue is a linear data structure that follows the FIFO (First In, First Out) principle. This means that the first element added to the queue is the first to be removed. Think of a queue of people at a ticket counter—people are served in the order they arrive.*
 
-
-
-
-
-Step 5: Queues
-A queue is a linear data structure that follows the FIFO (First In, First Out) principle. This means that the first element added to the queue is the first to be removed. Think of a queue of people at a ticket counter—people are served in the order they arrive.
-
-Concepts to Understand
+### Concepts to Understand
 Common Operations:
 
-Enqueue: Add an element to the rear of the queue.
-Dequeue: Remove and return the element from the front of the queue.
-Peek/Front: Return the element at the front without removing it.
-isEmpty: Check if the queue is empty.
-Size: Return the number of elements in the queue.
+- Enqueue: Add an element to the rear of the queue.
+- Dequeue: Remove and return the element from the front of the queue.
+- Peek/Front: Return the element at the front without removing it.
+- isEmpty: Check if the queue is empty.
+- Size: Return the number of elements in the queue.
+
 Applications:
 
-CPU scheduling.
-Breadth-First Search (BFS) in graphs/trees.
-Printing tasks.
-Handling asynchronous tasks (e.g., message queues).
-Implementation: Queues can be implemented using arrays or linked lists.
+- CPU scheduling.
+- Breadth-First Search (BFS) in graphs/trees.
+- Printing tasks.
+- Handling asynchronous tasks (e.g., message queues).
+- Implementation: Queues can be implemented using arrays or linked lists.
 
 Queue Implementation in JavaScript
 Using an array:
