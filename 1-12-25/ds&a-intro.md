@@ -259,29 +259,34 @@ console.log(intersection([1, 2, 2, 1], [2, 2])); // Output: [2]
 
 - Concepts to Understand
 
-__Characteristics__:
+- __Characteristics__:
 
-Strings are immutable in most languages like JavaScript.
-They are essentially arrays of characters.
-Common Operations:
+   - Strings are immutable in most languages like JavaScript.
+   - They are essentially arrays of characters.
 
-Accessing characters: 
+__Common Operations__:
+
+__Accessing characters__: 
 𝑂(1) using indexing.
-Searching substrings: 
+
+__Searching substrings__: 
 𝑂(𝑛) for simple checks, 
 𝑂(𝑛⋅𝑚) for pattern matching, 
 𝑂(𝑛) using advanced algorithms like KMP.
-Concatenation: 
+
+__Concatenation__: 
 𝑂(𝑛+𝑚), where 
 𝑛,𝑚 are the lengths of the strings.
+
 __Useful Methods in JavaScript__:
 
-`.charAt(index)`, `.slice(start, end)`, `.substring(start, end)`
-`.indexOf(substr)`, `.includes(substr)`
-`.split(separator)`, `.join(separator)`
-`.toUpperCase()`, `.toLowerCase()`
-`.replace(pattern, replacement)`, `.trim()`
-
+|`.charAt(index)` | `.slice(start, end)` |
+|-----------------|----------------------|
+|`.substring(start, end)` | `.indexOf(substr)` |
+|`.includes(substr)` | `.split(separator)` |
+|`.join(separator)` | `.toUpperCase()` |
+|`.toLowerCase()` | `.replace(pattern, replacement)` |
+|`.trim()` |
 __Example Problems__
 1. Reverse a String
 Reverse the characters of a string.
