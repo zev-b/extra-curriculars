@@ -250,3 +250,202 @@ function intersection(nums1, nums2) {
 // Example
 console.log(intersection([1, 2, 2, 1], [2, 2])); // Output: [2]
 ```
+
+
+
+## Step 2: Strings
+*Strings are one of the most commonly used data structures in programming interviews.* 
+- Let’s break this down:
+
+- Concepts to Understand
+
+__Characteristics__:
+
+Strings are immutable in most languages like JavaScript.
+They are essentially arrays of characters.
+Common Operations:
+
+Accessing characters: 
+𝑂(1) using indexing.
+Searching substrings: 
+𝑂(𝑛) for simple checks, 
+𝑂(𝑛⋅𝑚) for pattern matching, 
+𝑂(𝑛) using advanced algorithms like KMP.
+Concatenation: 
+𝑂(𝑛+𝑚), where 
+𝑛,𝑚 are the lengths of the strings.
+__Useful Methods in JavaScript__:
+
+`.charAt(index)`, `.slice(start, end)`, `.substring(start, end)`
+`.indexOf(substr)`, `.includes(substr)`
+`.split(separator)`, `.join(separator)`
+`.toUpperCase()`, `.toLowerCase()`
+`.replace(pattern, replacement)`, `.trim()`
+
+__Example Problems__
+1. Reverse a String
+Reverse the characters of a string.
+
+Steps:
+
+Convert the string to an array of characters using .split('').
+Reverse the array using .reverse().
+Join the reversed array back into a string.
+Code:
+
+javascript
+Copy code
+function reverseString(str) {
+    return str.split('').reverse().join('');
+}
+
+// Example
+console.log(reverseString("hello")); // Output: "olleh"
+2. Check if a String is a Palindrome
+A string is a palindrome if it reads the same backward as forward.
+
+Steps:
+
+Use two pointers: one starting from the beginning and the other from the end.
+Compare the characters at the pointers and move inward.
+If any pair of characters doesn’t match, return false.
+Code:
+
+javascript
+Copy code
+function isPalindrome(str) {
+    let left = 0, right = str.length - 1;
+
+    while (left < right) {
+        if (str[left] !== str[right]) return false;
+        left++;
+        right--;
+    }
+
+    return true;
+}
+
+// Example
+console.log(isPalindrome("racecar")); // Output: true
+console.log(isPalindrome("hello"));   // Output: false
+3. Find the First Non-Repeating Character
+Given a string, find the first character that does not repeat.
+
+Steps:
+
+Use a hash map to store the frequency of each character.
+Iterate through the string to check for the first character with a frequency of 1.
+Code:
+
+javascript
+Copy code
+function firstNonRepeatingCharacter(str) {
+    const frequencyMap = new Map();
+
+    for (const char of str) {
+        frequencyMap.set(char, (frequencyMap.get(char) || 0) + 1);
+    }
+
+    for (let i = 0; i < str.length; i++) {
+        if (frequencyMap.get(str[i]) === 1) {
+            return str[i];
+        }
+    }
+
+    return null; // Return null if no non-repeating character is found
+}
+
+// Example
+console.log(firstNonRepeatingCharacter("swiss")); // Output: "w"
+console.log(firstNonRepeatingCharacter("aabb"));  // Output: null
+Practice Problems
+1. Anagram Check
+Check if two strings are anagrams of each other (contain the same characters in a different order).
+
+Steps:
+
+Sort both strings and compare them.
+Code:
+
+javascript
+Copy code
+function isAnagram(s1, s2) {
+    if (s1.length !== s2.length) return false;
+    return s1.split('').sort().join('') === s2.split('').sort().join('');
+}
+
+// Example
+console.log(isAnagram("listen", "silent")); // Output: true
+console.log(isAnagram("hello", "world"));   // Output: false
+2. Longest Substring Without Repeating Characters
+Find the length of the longest substring without repeating characters.
+
+Steps:
+
+Use the sliding window technique:
+Maintain a set to store characters of the current substring.
+Use two pointers to expand/shrink the window.
+Update the maximum length when expanding the window.
+Code:
+
+javascript
+Copy code
+function lengthOfLongestSubstring(s) {
+    const set = new Set();
+    let left = 0, maxLength = 0;
+
+    for (let right = 0; right < s.length; right++) {
+        while (set.has(s[right])) {
+            set.delete(s[left]);
+            left++;
+        }
+        set.add(s[right]);
+        maxLength = Math.max(maxLength, right - left + 1);
+    }
+
+    return maxLength;
+}
+
+// Example
+console.log(lengthOfLongestSubstring("abcabcbb")); // Output: 3 ("abc")
+console.log(lengthOfLongestSubstring("bbbbb"));    // Output: 1 ("b")
+3. Count and Say
+Given an integer 
+𝑛
+n, generate the nth term of the count-and-say sequence.
+
+Steps:
+
+Start with "1" for 
+𝑛
+=
+1
+n=1.
+For each subsequent term:
+Count consecutive characters in the previous term.
+Build the next term based on counts and values.
+Code:
+
+javascript
+Copy code
+function countAndSay(n) {
+    if (n === 1) return "1";
+
+    let prev = countAndSay(n - 1);
+    let count = 1, result = "";
+
+    for (let i = 0; i < prev.length; i++) {
+        if (prev[i] === prev[i + 1]) {
+            count++;
+        } else {
+            result += count + prev[i];
+            count = 1;
+        }
+    }
+
+    return result;
+}
+
+// Example
+console.log(countAndSay(1)); // Output: "1"
+console.log(countAndSay(4)); // Output: "1211"
