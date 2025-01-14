@@ -289,7 +289,7 @@ __Useful Methods in JavaScript__:
 |`.trim()` |
 
 __Example Problems__
-- 1. Reverse a String
+### 1. Reverse a String
 Reverse the characters of a string.
 
 Steps:
@@ -305,7 +305,7 @@ function reverseString(str) {
 // Example
 console.log(reverseString("hello")); // Output: "olleh"
 ```
-- 2. Check if a String is a Palindrome
+### 2. Check if a String is a Palindrome
 A string is a palindrome if it reads the same backward as forward.
 
 Steps:
@@ -330,7 +330,7 @@ function isPalindrome(str) {
 console.log(isPalindrome("racecar")); // Output: true
 console.log(isPalindrome("hello"));   // Output: false
 ```
-- 3. Find the First Non-Repeating Character
+### 3. Find the First Non-Repeating Character
 Given a string, find the first character that does not repeat.
 
 Steps:
@@ -360,7 +360,7 @@ console.log(firstNonRepeatingCharacter("aabb"));  // Output: null
 ```
 
 __Practice Problems__
-- 1. Anagram Check
+### 1. Anagram Check
 Check if two strings are anagrams of each other (contain the same characters in a different order).
 
 Steps:
@@ -376,7 +376,7 @@ function isAnagram(s1, s2) {
 console.log(isAnagram("listen", "silent")); // Output: true
 console.log(isAnagram("hello", "world"));   // Output: false
 ```
-- 2. Longest Substring Without Repeating Characters
+### 2. Longest Substring Without Repeating Characters
 Find the length of the longest substring without repeating characters.
 
 Steps:
@@ -406,7 +406,7 @@ function lengthOfLongestSubstring(s) {
 console.log(lengthOfLongestSubstring("abcabcbb")); // Output: 3 ("abc")
 console.log(lengthOfLongestSubstring("bbbbb"));    // Output: 1 ("b")
 ```
-- 3. Count and Say
+### 3. Count and Say
 Given an integer 𝑛, generate the nth term of the count-and-say sequence.
 
 Steps:
