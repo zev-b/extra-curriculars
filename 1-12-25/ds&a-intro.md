@@ -911,8 +911,7 @@ Applications:
 Queue Implementation in JavaScript
 Using an array:
 
-javascript
-Copy code
+```javascript
 class Queue {
     constructor() {
         this.queue = [];
@@ -948,18 +947,18 @@ queue.enqueue(20);
 console.log(queue.peek()); // Output: 10
 console.log(queue.dequeue()); // Output: 10
 console.log(queue.size());   // Output: 1
-Example Problems
-1. Implement a Circular Queue
+```
+
+## Example Problems
+### 1. Implement a Circular Queue
 Problem: Design a circular queue that supports the operations:
 
-enqueue: Adds an item if the queue is not full.
-dequeue: Removes an item if the queue is not empty.
-isFull: Checks if the queue is full.
-isEmpty: Checks if the queue is empty.
-Code:
+- enqueue: Adds an item if the queue is not full.
+- dequeue: Removes an item if the queue is not empty.
+- isFull: Checks if the queue is full.
+- isEmpty: Checks if the queue is empty.
 
-javascript
-Copy code
+```javascript
 class CircularQueue {
     constructor(k) {
         this.queue = new Array(k).fill(null);
@@ -1007,13 +1006,12 @@ console.log(cq.enqueue(4)); // Output: false (queue is full)
 cq.dequeue();
 cq.enqueue(4);
 console.log(cq.peekFront()); // Output: 2
-2. Moving Average from Data Stream
+```
+
+### 2. Moving Average from Data Stream
 Problem: Calculate the moving average of the last n elements in a stream of numbers.
 
-Code:
-
-javascript
-Copy code
+```javascript
 class MovingAverage {
     constructor(size) {
         this.size = size;
@@ -1039,13 +1037,12 @@ console.log(ma.next(1)); // Output: 1.0
 console.log(ma.next(10)); // Output: 5.5
 console.log(ma.next(3)); // Output: 4.67
 console.log(ma.next(5)); // Output: 6.0
-3. Breadth-First Search (BFS)
+```
+
+### 3. Breadth-First Search (BFS)
 Problem: Given a binary tree, return the level order traversal (values at each level from left to right).
 
-Code:
-
-javascript
-Copy code
+```javascript
 function bfs(root) {
     if (!root) return [];
 
@@ -1078,9 +1075,10 @@ const tree = {
 };
 
 console.log(bfs(tree)); // Output: [[1], [2, 3]]
-Practice Problems
-Design Hit Counter: Count hits in the last 5 minutes in a stream of timestamped requests.
+```
+### Practice Problems
+- Design Hit Counter: Count hits in the last 5 minutes in a stream of timestamped requests.
 
-Sliding Window Maximum: Given an array, find the maximum value in every sliding window of size k.
+- Sliding Window Maximum: Given an array, find the maximum value in every sliding window of size k.
 
-Rotting Oranges: Simulate rotting oranges in a grid and determine the time it takes for all to rot.
+- Rotting Oranges: Simulate rotting oranges in a grid and determine the time it takes for all to rot.
