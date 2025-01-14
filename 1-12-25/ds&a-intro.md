@@ -1087,7 +1087,7 @@ console.log(bfs(tree)); // Output: [[1], [2, 3]]
 
 
 ## Step 6: Priority Queues
-A priority queue is a type of queue where each element is associated with a priority, and elements with higher priority are dequeued before those with lower priority. If two elements have the same priority, they follow the FIFO order.
+*A priority queue is a type of queue where each element is associated with a priority, and elements with higher priority are dequeued before those with lower priority. If two elements have the same priority, they follow the FIFO order.*
 
 Concepts to Understand
 Operations:
