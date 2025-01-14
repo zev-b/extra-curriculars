@@ -445,21 +445,22 @@ console.log(countAndSay(4)); // Output: "1211"
 ## Step 3: Linked Lists
 *Linked lists are fundamental data structures in computer science. They are often tested in interviews due to their simplicity and versatility.*
 
-Concepts to Understand
-Definition:
+### Concepts to Understand
+- Definition:
 
-A linked list is a linear data structure where each element (node) points to the next.
-Types:
-Singly Linked List: Nodes have a single pointer to the next node.
-Doubly Linked List: Nodes have pointers to both the previous and next nodes.
-Circular Linked List: The last node points back to the head.
-Common Operations:
+    *A linked list is a linear data structure where each element (node) points to the next.*
+- Types:
+    - Singly Linked List: Nodes have a single pointer to the next node.
+    - Doubly Linked List: Nodes have pointers to both the previous and next nodes.
+    - Circular Linked List: The last node points back to the head.
+- Common Operations:
 
-Traversal
-Insertion (at the head, tail, or middle)
-Deletion (by value or position)
-Reversal
-Node Structure: In JavaScript, a node can be represented as:
+- Traversal
+- Insertion (at the head, tail, or middle)
+- Deletion (by value or position)
+- Reversal
+
+### Node Structure: In JavaScript, a node can be represented as:
 
 ```javascript
 class Node {
@@ -469,7 +470,8 @@ class Node {
     }
 }
 ```
-Linked List Structure:
+
+### Linked List Structure:
 ```javascript
 class LinkedList {
     constructor() {
@@ -478,7 +480,8 @@ class LinkedList {
     }
 }
 ```
-Example Problems
+
+### Example Problems
 1. Reverse a Linked List
 Problem: Reverse a singly linked list.
 
