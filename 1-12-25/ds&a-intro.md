@@ -1216,8 +1216,8 @@ for (const [key, value] of map) {
     console.log(key, value);
 }
 ```
-Practice Problems for HashMaps
-Two Sum: Find two numbers in an array that add up to a target sum.
+## Practice Problems for HashMaps
+### Two Sum: Find two numbers in an array that add up to a target sum.
 
 ```javascript
 function twoSum(nums, target) {
@@ -1230,7 +1230,7 @@ function twoSum(nums, target) {
     return [];
 }
 ```
-Group Anagrams: Group words that are anagrams of each other.
+### Group Anagrams: Group words that are anagrams of each other.
 
 ```javascript
 function groupAnagrams(strs) {
@@ -1243,8 +1243,8 @@ function groupAnagrams(strs) {
     return Array.from(map.values());
 }
 ```
-HashSets
-A HashSet is a collection of unique elements, often implemented using hashing.
+## HashSets
+*A HashSet is a collection of unique elements, often implemented using hashing.*
 
 HashSet in JavaScript
 ```javascript
@@ -1266,8 +1266,8 @@ for (const value of set) {
     console.log(value);
 }
 ```
-Practice Problems for HashSets
-Contains Duplicate: Check if an array contains any duplicate numbers.
+## Practice Problems for HashSets
+### Contains Duplicate: Check if an array contains any duplicate numbers.
 
 ```javascript
 function containsDuplicate(nums) {
@@ -1280,7 +1280,7 @@ function containsDuplicate(nums) {
 }
 ```
 
-Longest Consecutive Sequence: Find the length of the longest consecutive sequence in an array.
+### Longest Consecutive Sequence: Find the length of the longest consecutive sequence in an array.
 
 ```javascript
 function longestConsecutive(nums) {
