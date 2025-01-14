@@ -1082,3 +1082,392 @@ console.log(bfs(tree)); // Output: [[1], [2, 3]]
 - Sliding Window Maximum: Given an array, find the maximum value in every sliding window of size k.
 
 - Rotting Oranges: Simulate rotting oranges in a grid and determine the time it takes for all to rot.
+
+
+
+
+## Step 6: Priority Queues
+A priority queue is a type of queue where each element is associated with a priority, and elements with higher priority are dequeued before those with lower priority. If two elements have the same priority, they follow the FIFO order.
+
+Concepts to Understand
+Operations:
+
+- Insert: Add an element with a priority.
+- Extract Max/Min: Remove the element with the highest or lowest priority.
+- Peek: Retrieve the element with the highest/lowest priority without removing it.
+
+Applications:
+
+Task scheduling in operating systems.
+Pathfinding algorithms (e.g., Dijkstra's algorithm).
+Huffman coding for data compression.
+Implementation:
+
+Can be implemented using arrays, but heaps are more efficient.
+
+Priority Queue Implementation in JavaScript
+Using a min-heap for a priority queue:
+
+```javascript
+class MinHeap {
+    constructor() {
+        this.heap = [];
+    }
+
+    _swap(i, j) {
+        [this.heap[i], this.heap[j]] = [this.heap[j], this.heap[i]];
+    }
+
+    _heapifyUp() {
+        let index = this.heap.length - 1;
+        while (index > 0) {
+            const parentIndex = Math.floor((index - 1) / 2);
+            if (this.heap[parentIndex] <= this.heap[index]) break;
+            this._swap(parentIndex, index);
+            index = parentIndex;
+        }
+    }
+
+    _heapifyDown() {
+        let index = 0;
+        while (true) {
+            const leftChildIndex = 2 * index + 1;
+            const rightChildIndex = 2 * index + 2;
+            let smallest = index;
+
+            if (leftChildIndex < this.heap.length && this.heap[leftChildIndex] < this.heap[smallest]) {
+                smallest = leftChildIndex;
+            }
+
+            if (rightChildIndex < this.heap.length && this.heap[rightChildIndex] < this.heap[smallest]) {
+                smallest = rightChildIndex;
+            }
+
+            if (smallest === index) break;
+            this._swap(index, smallest);
+            index = smallest;
+        }
+    }
+
+    insert(value) {
+        this.heap.push(value);
+        this._heapifyUp();
+    }
+
+    extractMin() {
+        if (this.heap.length === 0) return null;
+        if (this.heap.length === 1) return this.heap.pop();
+
+        const min = this.heap[0];
+        this.heap[0] = this.heap.pop();
+        this._heapifyDown();
+        return min;
+    }
+
+    peek() {
+        return this.heap.length > 0 ? this.heap[0] : null;
+    }
+}
+
+// Example Usage
+const pq = new MinHeap();
+pq.insert(5);
+pq.insert(3);
+pq.insert(8);
+console.log(pq.peek());       // Output: 3
+console.log(pq.extractMin()); // Output: 3
+console.log(pq.peek());       // Output: 5
+```
+### Practice Problems
+- K Closest Points to Origin: Find the k closest points to the origin (0, 0).
+
+- Merge K Sorted Lists: Merge k sorted linked lists into one sorted list.
+
+- Dijkstra's Algorithm: Find the shortest path in a graph from a source to all other vertices.
+
+
+
+
+## Step 7: HashMaps and HashSets
+HashMaps
+A HashMap (or dictionary) is a data structure that stores key-value pairs, enabling quick lookups, insertions, and deletions. Hashing is used to compute an index for keys, allowing O(1) average time complexity.
+
+HashMap in JavaScript
+```javascript
+// JavaScript has a built-in Map object.
+const map = new Map();
+
+// Insertion
+map.set("name", "Alice");
+map.set("age", 25);
+
+// Lookup
+console.log(map.get("name")); // Output: Alice
+
+// Deletion
+map.delete("age");
+
+// Checking presence
+console.log(map.has("name")); // Output: true
+
+// Iterating
+for (const [key, value] of map) {
+    console.log(key, value);
+}
+```
+Practice Problems for HashMaps
+Two Sum: Find two numbers in an array that add up to a target sum.
+
+```javascript
+function twoSum(nums, target) {
+    const map = new Map();
+    for (let i = 0; i < nums.length; i++) {
+        const complement = target - nums[i];
+        if (map.has(complement)) return [map.get(complement), i];
+        map.set(nums[i], i);
+    }
+    return [];
+}
+```
+Group Anagrams: Group words that are anagrams of each other.
+
+```javascript
+function groupAnagrams(strs) {
+    const map = new Map();
+    for (const str of strs) {
+        const key = str.split("").sort().join("");
+        if (!map.has(key)) map.set(key, []);
+        map.get(key).push(str);
+    }
+    return Array.from(map.values());
+}
+```
+HashSets
+A HashSet is a collection of unique elements, often implemented using hashing.
+
+HashSet in JavaScript
+```javascript
+// JavaScript has a built-in Set object.
+const set = new Set();
+
+// Insertion
+set.add(10);
+set.add(20);
+
+// Lookup
+console.log(set.has(10)); // Output: true
+
+// Deletion
+set.delete(20);
+
+// Iterating
+for (const value of set) {
+    console.log(value);
+}
+```
+Practice Problems for HashSets
+Contains Duplicate: Check if an array contains any duplicate numbers.
+
+```javascript
+function containsDuplicate(nums) {
+    const set = new Set();
+    for (const num of nums) {
+        if (set.has(num)) return true;
+        set.add(num);
+    }
+    return false;
+}
+```
+
+Longest Consecutive Sequence: Find the length of the longest consecutive sequence in an array.
+
+```javascript
+function longestConsecutive(nums) {
+    const set = new Set(nums);
+    let maxLength = 0;
+
+    for (const num of set) {
+        if (!set.has(num - 1)) {
+            let currentNum = num;
+            let length = 1;
+
+            while (set.has(currentNum + 1)) {
+                currentNum++;
+                length++;
+            }
+
+            maxLength = Math.max(maxLength, length);
+        }
+    }
+
+    return maxLength;
+}
+```
+## Step 8: Trees
+A Tree is a hierarchical data structure consisting of nodes. The topmost node is the root, and each node may have child nodes.
+
+Binary Tree Implementation
+```javascript
+class TreeNode {
+    constructor(value, left = null, right = null) {
+        this.value = value;
+        this.left = left;
+        this.right = right;
+    }
+}
+
+// Example Tree
+const root = new TreeNode(1);
+root.left = new TreeNode(2);
+root.right = new TreeNode(3);
+root.left.left = new TreeNode(4);
+root.left.right = new TreeNode(5);
+```
+
+Tree Traversals
+Preorder (Root, Left, Right):
+
+```javascript
+function preorderTraversal(node) {
+    if (!node) return [];
+    return [node.value, ...preorderTraversal(node.left), ...preorderTraversal(node.right)];
+}
+```
+
+Inorder (Left, Root, Right):
+
+```javascript
+function inorderTraversal(node) {
+    if (!node) return [];
+    return [...inorderTraversal(node.left), node.value, ...inorderTraversal(node.right)];
+}
+```
+
+Postorder (Left, Right, Root):
+
+```javascript
+function postorderTraversal(node) {
+    if (!node) return [];
+    return [...postorderTraversal(node.left), ...postorderTraversal(node.right), node.value];
+}
+```
+
+Practice Problems
+Maximum Depth of Binary Tree:
+
+```javascript
+function maxDepth(root) {
+    if (!root) return 0;
+    return 1 + Math.max(maxDepth(root.left), maxDepth(root.right));
+}
+```
+
+Path Sum: Check if the tree has a root-to-leaf path with a given sum.
+
+```javascript
+function hasPathSum(root, sum) {
+    if (!root) return false;
+    if (!root.left && !root.right) return root.value === sum;
+    return hasPathSum(root.left, sum - root.value) || hasPathSum(root.right, sum - root.value);
+}
+```
+
+Step 9: Binary Search Trees (BST)
+A Binary Search Tree is a binary tree where:
+
+- The left subtree contains nodes with values smaller than the root.
+- The right subtree contains nodes with values greater than the root.
+
+Insert into a BST
+```javascript
+function insertIntoBST(root, value) {
+    if (!root) return new TreeNode(value);
+    if (value < root.value) root.left = insertIntoBST(root.left, value);
+    else root.right = insertIntoBST(root.right, value);
+    return root;
+}
+```
+
+Search in a BST
+```javascript
+function searchBST(root, value) {
+    if (!root || root.value === value) return root;
+    return value < root.value ? searchBST(root.left, value) : searchBST(root.right, value);
+}
+```
+
+Practice Problems
+Validate BST: Check if a tree is a valid BST.
+
+```javascript
+function isValidBST(root, min = null, max = null) {
+    if (!root) return true;
+    if ((min !== null && root.value <= min) || (max !== null && root.value >= max)) return false;
+    return isValidBST(root.left, min, root.value) && isValidBST(root.right, root.value, max);
+}
+```
+Lowest Common Ancestor in BST: Find the LCA of two nodes.
+
+## Step 10: Graphs
+Graphs consist of nodes (vertices) and edges connecting them. Graphs can be:
+
+- Directed or Undirected.
+- Weighted or Unweighted.
+
+Graph Representation
+Adjacency List:
+
+```javascript
+const graph = {
+    0: [1, 2],
+    1: [0, 3],
+    2: [0],
+    3: [1],
+};
+```
+
+Adjacency Matrix:
+
+```javascript
+const matrix = [
+    [0, 1, 1, 0],
+    [1, 0, 0, 1],
+    [1, 0, 0, 0],
+    [0, 1, 0, 0],
+];
+```
+
+Graph Traversals
+Breadth-First Search (BFS):
+
+```javascript
+function bfs(graph, start) {
+    const visited = new Set();
+    const queue = [start];
+    const result = [];
+
+    while (queue.length) {
+        const node = queue.shift();
+        if (visited.has(node)) continue;
+        visited.add(node);
+        result.push(node);
+
+        for (const neighbor of graph[node]) {
+            if (!visited.has(neighbor)) queue.push(neighbor);
+        }
+    }
+
+    return result;
+}
+```
+
+Depth-First Search (DFS):
+
+```javascript
+function dfs(graph, node, visited = new Set()) {
+    if (visited.has(node)) return;
+    visited.add(node);
+    console.log(node);
+    for (const neighbor of graph[node]) dfs(graph, neighbor, visited);
+}
+```
