@@ -1305,7 +1305,7 @@ function longestConsecutive(nums) {
 }
 ```
 ## Step 8: Trees
-A Tree is a hierarchical data structure consisting of nodes. The topmost node is the root, and each node may have child nodes.
+*A Tree is a hierarchical data structure consisting of nodes. The topmost node is the root, and each node may have child nodes.*
 
 Binary Tree Implementation
 ```javascript
@@ -1353,8 +1353,8 @@ function postorderTraversal(node) {
 }
 ```
 
-Practice Problems
-Maximum Depth of Binary Tree:
+## Practice Problems
+### Maximum Depth of Binary Tree:
 
 ```javascript
 function maxDepth(root) {
@@ -1363,7 +1363,7 @@ function maxDepth(root) {
 }
 ```
 
-Path Sum: Check if the tree has a root-to-leaf path with a given sum.
+### Path Sum: Check if the tree has a root-to-leaf path with a given sum.
 
 ```javascript
 function hasPathSum(root, sum) {
@@ -1373,7 +1373,7 @@ function hasPathSum(root, sum) {
 }
 ```
 
-Step 9: Binary Search Trees (BST)
+## Step 9: Binary Search Trees (BST)
 A Binary Search Tree is a binary tree where:
 
 - The left subtree contains nodes with values smaller than the root.
@@ -1397,8 +1397,8 @@ function searchBST(root, value) {
 }
 ```
 
-Practice Problems
-Validate BST: Check if a tree is a valid BST.
+## Practice Problems
+### Validate BST: Check if a tree is a valid BST.
 
 ```javascript
 function isValidBST(root, min = null, max = null) {
@@ -1407,10 +1407,10 @@ function isValidBST(root, min = null, max = null) {
     return isValidBST(root.left, min, root.value) && isValidBST(root.right, root.value, max);
 }
 ```
-Lowest Common Ancestor in BST: Find the LCA of two nodes.
+### Lowest Common Ancestor in BST: Find the LCA of two nodes.
 
 ## Step 10: Graphs
-Graphs consist of nodes (vertices) and edges connecting them. Graphs can be:
+*Graphs consist of nodes (vertices) and edges connecting them. Graphs can be:*
 
 - Directed or Undirected.
 - Weighted or Unweighted.
