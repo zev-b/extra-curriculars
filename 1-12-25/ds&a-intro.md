@@ -1190,7 +1190,8 @@ console.log(pq.peek());       // Output: 5
 
 ## Step 7: HashMaps and HashSets
 HashMaps
-A HashMap (or dictionary) is a data structure that stores key-value pairs, enabling quick lookups, insertions, and deletions. Hashing is used to compute an index for keys, allowing O(1) average time complexity.
+
+*A HashMap (or dictionary) is a data structure that stores key-value pairs, enabling quick lookups, insertions, and deletions. Hashing is used to compute an index for keys, allowing O(1) average time complexity.*
 
 HashMap in JavaScript
 ```javascript
