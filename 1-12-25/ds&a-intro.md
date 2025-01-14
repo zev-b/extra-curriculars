@@ -481,8 +481,8 @@ class LinkedList {
 }
 ```
 
-### Example Problems
-1. Reverse a Linked List
+## Example Problems
+### 1. Reverse a Linked List
 Problem: Reverse a singly linked list.
 
 Steps:
@@ -519,7 +519,7 @@ while (reversedHead) {
 }
 ```
 
-2. Detect a Cycle in a Linked List
+### 2. Detect a Cycle in a Linked List
 Problem: Determine if a linked list has a cycle (a node points back to a previous node).
 
 Steps:
@@ -551,7 +551,7 @@ head.next.next.next = head.next; // Creates a cycle
 console.log(hasCycle(head)); // Output: true
 ```
 
-3. Merge Two Sorted Linked Lists
+### 3. Merge Two Sorted Linked Lists
 Problem: Merge two sorted linked lists into a single sorted linked list.
 
 Steps:
@@ -600,7 +600,7 @@ while (mergedList) {
 }
 ```
 Practice Problems
-1. Find the Middle of a Linked List
+### 1. Find the Middle of a Linked List
 Steps:
 
 - Use two pointers: a slow pointer (slow) and a fast pointer (fast).
@@ -629,7 +629,7 @@ head.next.next.next.next = new Node(5);
 
 console.log(findMiddle(head).value); // Output: 3
 ```
-2. Remove Nth Node from End of List
+### 2. Remove Nth Node from End of List
 Steps:
 
 - Use two pointers: first and second.
