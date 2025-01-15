@@ -205,11 +205,11 @@ Overestimating optimizations without analyzing growth.
 
 ### `8.2` Tips for Mastery
 
-Practice analyzing small, real-world algorithms.
+- Practice analyzing small, real-world algorithms.
 
-Compare algorithms for the same task.
+- Compare algorithms for the same task.
 
-Focus on patterns in complexity (e.g., divide-and-conquer).
+- Focus on patterns in complexity (e.g., divide-and-conquer).
 
-By understanding and applying Big O notation, you can effectively analyze and optimize algorithms, ensuring they perform well even as input size grows.
+- By understanding and applying Big O notation, you can effectively analyze and optimize algorithms, ensuring they perform well even as input size grows.
 
