@@ -2,7 +2,7 @@
 
 - ### Big O notation is a mathematical concept used in computer science to describe the performance or complexity of an algorithm. It provides a way to analyze how an algorithm’s runtime or space requirements grow relative to the size of the input. Understanding Big O is crucial for designing efficient algorithms and assessing their scalability.
 
-## 1. Key Concepts of Big O Analysis
+## __1__. Key Concepts of Big O Analysis
 
 ### `1.1` What is Big O Notation?
 
@@ -22,7 +22,7 @@ Big O notation describes the upper bound of an algorithm’s runtime or space re
 
 Big O focuses on the dominant term of an algorithm’s growth. For example, if an algorithm’s runtime is expressed as , Big O simplifies this to O(n²), because the  term grows the fastest as  increases.
 
-## 2. Common Big O Classes
+## __2__. Common Big O Classes
 
 Here are the most common complexities, from fastest to slowest growth rates:
 
@@ -90,7 +90,7 @@ The runtime grows factorially with input size.
 
 Graph: Extremely steep curve.
 
-## 3. Big O Analysis of Code
+## __3__. Big O Analysis of Code
 
 ### `3.1` Rules for Simplifying Big O
 
@@ -144,7 +144,7 @@ function binarySearch(array, target) {
 
 Analysis: O(log n).
 ```
-## 4. Space Complexity
+## __4__. Space Complexity
 
 Big O can also analyze memory usage. The goal is to estimate the additional memory required as input grows.
 
@@ -162,7 +162,7 @@ Additional data structures.
 
 Example: Merge sort’s temporary arrays: O(n).
 
-## 5. Practical Steps to Analyze Algorithms
+## __5__. Practical Steps to Analyze Algorithms
 
 >__Understand the Code__:
 >>Break the code into its components (loops, conditionals, function calls).
@@ -179,7 +179,7 @@ Example: Merge sort’s temporary arrays: O(n).
 >__Validate with Test Cases__:
 >>Use actual data to confirm assumptions about growth patterns.
 
-## 6. Tools for Practice
+## __6__. Tools for Practice
 
 - Visual Tools: => Try platforms like VisuAlgo to visualize algorithms.
  
@@ -187,7 +187,7 @@ Example: Merge sort’s temporary arrays: O(n).
 
 - Books: "Introduction to Algorithms" by Cormen et al., or "Grokking Algorithms" by Aditya Bhargava.
 
-## 7. Real-World Applications
+## __7__. Real-World Applications
 
 - __Web Development__: Optimize database queries, pagination, and APIs.
 
@@ -195,7 +195,7 @@ Example: Merge sort’s temporary arrays: O(n).
 
 - __Competitive Programming__: Solve problems within time limits.
 
-## 8. Common Pitfalls and Tips
+## __8__. Common Pitfalls and Tips
 
 ### `8.1` Avoiding Pitfalls
 
