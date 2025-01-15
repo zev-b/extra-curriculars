@@ -199,9 +199,9 @@ Example: Merge sort’s temporary arrays: O(n).
 
 ### `8.1` Avoiding Pitfalls
 
-Ignoring edge cases in input size.
+- Ignoring edge cases in input size.
 
-Overestimating optimizations without analyzing growth.
+- Overestimating optimizations without analyzing growth.
 
 ### `8.2` Tips for Mastery
 
