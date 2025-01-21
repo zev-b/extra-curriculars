@@ -8,7 +8,7 @@ def play():
         return 'It\'s a draw'
     
     if is_win(user, computer):
-        return 'Congratulations!'
+        return 'Congratulations! 🚀'
     
     return 'You Died 🤖'
 
