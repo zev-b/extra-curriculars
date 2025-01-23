@@ -20,4 +20,4 @@ def is_win(player, opponent):
         return True
     return False
 
-# print(play())
+print(play())
