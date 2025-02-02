@@ -35,7 +35,6 @@
 
 
 
-
 ## 1. __Foundations of System Design__
 This area covers the building blocks of any system. Understanding these concepts helps you tackle problems systematically.
 
