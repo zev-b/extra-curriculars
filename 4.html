@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+    <body style="font-family: Arial, sans-serif; line-height: 1.6; color: #333; background-color: #f8f8f8; padding: 20px; margin: 0;">
+        <table width="100%" cellspacing="0" cellpadding="0" border="0" align="center">
+            <tr>
+                <td align="center">
+                    <table width="600" cellspacing="0" cellpadding="0" border="0" style="background-color: #ffffff; width: 600px;">
+                        <tr>
+                            <td style="padding: 20px;">
+                                <h2 style="color: black; margin: 0; padding-bottom: 10px;">Good Day {{1.data.object.customer.contact_name}},</h2>
+                                <p style="margin: 0;">Thank you for confirming your order!</p>
+                                <p>Your order details are listed below. Please let us know if anything needs to be adjusted.</p>
+
+                                <!-- Order Summary -->
+                                <h3 style="color: #333;">Order Summary</h3>
+                                <table width="100%" cellspacing="0" cellpadding="10" border="1" style="border: 1px solid #ddd; border-collapse: separate;">
+                                    <tr>
+                                        <th style="background-color: black; color: #fff; text-align: left;">Order ID</th>
+                                        <td>{{1.data.object.number}}</td>
+                                    </tr>
+                                    <tr>
+                                        <th style="background-color: black; color: #fff; text-align: left;">Customer PO#</th>
+                                        <td>{{1.data.object.purchase_order_number}}</td>
+                                    </tr>
+                                </table>
+
+                                <!-- Vehicle Details -->
+                                <h3 style="margin-top: 20px;">Vehicle Details</h3>
+                                <table width="100%" cellspacing="0" cellpadding="10" border="1" style="border: 1px solid #ddd; border-collapse: separate;">
+                                    <tr>
+                                        <th style="background-color: black; color: #fff; text-align: left;">Year</th>
+                                        <th style="background-color: black; color: #fff; text-align: left;">Make</th>
+                                        <th style="background-color: black; color: #fff; text-align: left;">Model</th>
+                                        <th style="background-color: black; color: #fff; text-align: left;">Type</th>
+                                        <th style="background-color: black; color: #fff; text-align: left;">VIN#</th>
+                                    </tr>
+                                    <tr>
+                                        <td>{{1.data.object.vehicles[].year}}</td>
+                                        <td>{{1.data.object.vehicles[].make}}</td>
+                                        <td>{{1.data.object.vehicles[].model}}</td>
+                                        <td>{{capitalize(1.data.object.vehicles[].type)}}</td>
+                                        <td>{{1.data.object.vehicles[].vin}}</td>
+                                    </tr>
+                                </table>
+
+                                <!-- Shipping Details -->
+                                <h3 style="margin-top: 20px;">Shipping Details</h3>
+                                <table width="100%" cellspacing="0" cellpadding="10" border="1" style="border: 1px solid #ddd; border-collapse: separate;">
+                                    <tr>
+                                        <th style="background-color: black; color: #fff; text-align: left;">Origin</th>
+                                        <td>{{1.data.object.pickup.venue.address}}, {{1.data.object.pickup.venue.city}}, {{1.data.object.pickup.venue.state}}, {{1.data.object.pickup.venue.zip}}</td>
+                                    </tr>
+                                    <tr>
+                                        <th style="background-color: black; color: #fff; text-align: left;">Destination</th>
+                                        <td>{{1.data.object.delivery.venue.address}}, {{1.data.object.delivery.venue.city}}, {{1.data.object.delivery.venue.state}}, {{1.data.object.delivery.venue.zip}}</td>
+                                    </tr>
+                                    <tr>
+                                        <th style="background-color: black; color: #fff; text-align: left;">Pickup Date</th>
+                                        <td>{{capitalize(1.data.object.pickup.date_type)}}: {{formatDate(1.data.object.pickup.scheduled_at; "MM/DD/YY")}} - {{formatDate(1.data.object.pickup.scheduled_ends_at; "MM/DD/YY")}}</td>
+                                    </tr>
+                                </table>
+
+                                <p>If you have any questions or need modifications, feel free to reach out.</p>
+                                <p style="margin-top: 10px; font-size: 14px; color: #555;">Best regards, <br> <strong>United Routes</strong></p>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        color: #333;
+        background-color: #f8f8f8;
+        padding: 20px;
+      }
+      .container {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+      }
+      .section {
+        margin-bottom: 20px;
+      }
+      .label {
+        font-weight: bold;
+        color: black;
+      }
+      .divider {
+        border-top: 2px solid black;
+        margin: 10px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h2 style="color: black;">
+        Good Day {{1.data.object.customer.contact_name}}, Thank you for confirming your order!
+      </h2>
+      <p>
+        Your order details are listed below, please let us know if anything needs to be adjusted.
+      </p>
+
+      <!-- Order Summary -->
+      <div class="section">
+        <h3 style="color: black;">Order Summary</h3>
+        <p><span class="label">Order ID:</span> {{1.data.object.number}}</p>
+        <p><span class="label">Customer PO#:</span> {{1.data.object.purchase_order_number}}</p>
+      </div>
+
+      <hr class="divider" />
+
+      <!-- Vehicle Details -->
+      <div class="section">
+        <h3>Vehicle Details</h3>
+          <p><span class="label">Year:</span> {{vehicle.year}}</p>
+          <p><span class="label">Make:</span> {{vehicle.make}}</p>
+          <p><span class="label">Model:</span> {{vehicle.model}}</p>
+          <p><span class="label">Type:</span> {{capitalize(vehicle.type)}}</p>
+          <p><span class="label">VIN#:</span> {{vehicle.vin}}</p>
+          <hr class="divider" />
+      </div>
+
+      <!-- Shipping Details -->
+      <div class="section">
+        <h3>Shipping Details</h3>
+        <p><span class="label">Origin:</span> {{1.data.object.pickup.venue.address}}, {{1.data.object.pickup.venue.city}}, {{1.data.object.pickup.venue.state}}, {{1.data.object.pickup.venue.zip}}</p>
+        <p><span class="label">Destination:</span> {{1.data.object.delivery.venue.address}}, {{1.data.object.delivery.venue.city}}, {{1.data.object.delivery.venue.state}}, {{1.data.object.delivery.venue.zip}}</p>
+        <p>
+          <span class="label">Pickup Date:</span> 
+          {{capitalize(1.data.object.pickup.date_type)}}: 
+          {{formatDate(1.data.object.pickup.scheduled_at; "MM/DD/YY")}} - 
+          {{formatDate(1.data.object.pickup.scheduled_ends_at; "MM/DD/YY")}}
+        </p>
+      </div>
+
+      <p>If you have any questions or need modifications, feel free to reach out.</p>
+      <p style="margin-top: 10px; font-size: 14px; color: #555;">
+        Best regards, <br />
+        <strong>United Routes</strong>
+      </p>
+    </div>
+  </body>
+</html>
