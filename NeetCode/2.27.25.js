@@ -27,10 +27,8 @@ class Solution {
                 // console.log(indxValMap);
                 return [indxValMap[diffVal], i]
             }
-        
             indxValMap[nums[i]] = i;
         }
-        
         return [];
     }
 }
