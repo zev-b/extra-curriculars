@@ -18,7 +18,6 @@ class Solution {
         3. otherwise the val is not found at any indices in the array
               return an empty array
         */
-
         let indxValMap = {};
         
         for (let i = 0; i < nums.length; i++) {
@@ -30,7 +29,7 @@ class Solution {
             }
             indxValMap[nums[i]] = i;
         }
-        
+
         return [];
     }
 }
