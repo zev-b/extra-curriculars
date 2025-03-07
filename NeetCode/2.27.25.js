@@ -29,7 +29,7 @@ class Solution {
             }
             indxValMap[nums[i]] = i;
         }
-        
+         
         return [];
     }
 }
