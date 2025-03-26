@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        color: #333;
+        background-color: #f8f8f8;
+        padding: 20px;
+      }
+      .container {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+      }
+      .section {
+        margin-bottom: 20px;
+      }
+      .label {
+        font-weight: bold;
+        color: black;
+      }
+      .divider {
+        border-top: 2px solid black;
+        margin: 10px 0;
+      }
+      .order-table {
+    width: 100%; 
+    border-collapse: collapse; /* Ensures no extra spacing */
+}
+
+.order-table td {
+    padding: 5px 10px;
+    vertical-align: middle; /* Aligns text in the middle */
+}
+
+.label {
+    text-align: left;
+    font-weight: bold;
+    width: 20%; /* Adjust as needed */
+}
+
+.value {
+    text-align: left;
+    width: 30%; /* Ensures the underscores extend */
+}
+
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h2 style="color: black;">
+        Good Day {{1.data.object.customer.contact_name}},<br> Thank you for confirming your order!
+      </h2>
+      <p>
+        Your order details are listed below, please let us know if anything needs to be adjusted.
+      </p>
+
+      <!-- Order Summary -->
+      <div class="section">
+        <h3 style="color: black; text-align: center;">Order Summary</h3>
+
+        <table class="order-table">
+            <tr>
+                <td class="label">Order ID:</td>
+                <td class="value">{{1.data.object.number}}</td>
+                <td class="label">Customer PO#:</td>
+                <td class="value">{{1.data.object.purchase_order_number}}</td>
+            </tr>
+        </table>
+        
+      </div>
+
+      <hr class="divider" />
+
+      <!-- Vehicle Details -->
+     <div style="margin-bottom: 20px;">        <h3 style="text-align: center;">Vehicle Details</h3>
+<div style="padding-bottom: 10px;">
+      {{27.vehiclesHtml}}
+</div>      </div>
+
+      <!-- Shipping Details -->
+      <div class="section">
+        <h3 style="text-align: center;">Shipping Details</h3>
+        <p><span class="label">Origin:</span> {{1.data.object.pickup.venue.address}}, {{1.data.object.pickup.venue.city}}, {{1.data.object.pickup.venue.state}}, {{1.data.object.pickup.venue.zip}}</p>
+        <p><span class="label">Destination:</span> {{1.data.object.delivery.venue.address}}, {{1.data.object.delivery.venue.city}}, {{1.data.object.delivery.venue.state}}, {{1.data.object.delivery.venue.zip}}</p>
+        <p>
+          <span class="label">Scheduled Pickup Date:</span> 
+          {{capitalize(1.data.object.pickup.date_type)}}: 
+          {{formatDate(1.data.object.pickup.scheduled_at; "MM/DD/YY")}} {{if(1.data.object.pickup.scheduled_ends_at; "  - " + formatDate(1.data.object.pickup.scheduled_ends_at; "MM/DD/YY"); )}} 
+          
+        </p>
+        <p>
+          <span class="label">Picked Up:</span>
+          {{formatDate(1.data.object.pickup.completed_at; "MM/DD/YY")}} 
+          
+        </p>
+
+<p>
+          <span class="label">Scheduled Delivery Date:</span> 
+          {{capitalize(1.data.object.delivery.date_type)}}: 
+          {{formatDate(1.data.object.delivery.scheduled_at; "MM/DD/YY")}} {{if(1.data.object.delivery.scheduled_ends_at; "  - " + formatDate(1.data.object.delivery.scheduled_ends_at; "MM/DD/YY"); )}} 
+          
+        </p>
+        
+      </div>
+
+      <p>If you have any questions or need modifications, feel free to reach out.</p>
+      <p style="margin-top: 10px; font-size: 14px; color: #555;">
+        Best regards, <br />
+        <strong>United Routes</strong>
+      </p>
+    </div>
+  </body>
+</html>
