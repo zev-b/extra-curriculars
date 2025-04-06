@@ -249,6 +249,7 @@ VPN-based Filtering: ~$5/month (if not using free VPS)
 👉 Build a pre-configured Pi-hole or VPN service and sell it to parents or religious organizations.
 👉 Create a mobile app that restricts access to certain apps/sites.
 
+
 🔥 Next Steps: Hands-on Implementation
 Let me know where you want to start! I can walk you through setting up Pi-hole, configuring VPN filtering, or even building a custom Android/iOS app. 🚀
 
