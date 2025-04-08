@@ -254,3 +254,45 @@ VPN-based Filtering: ~$5/month (if not using free VPS)
 🔥 Next Steps: Hands-on Implementation
 Let me know where you want to start! I can walk you through setting up Pi-hole, configuring VPN filtering, or even building a custom Android/iOS app. 🚀
 
+
+
+✅ Oracle Cloud Free Tier — What You Get
+You get these forever (no credit card charges):
+
+Feature	Value
+🖥️ 2 VM instances	Always-free, up to 4 CPUs (Ampere ARM-based) or 1 CPU (x86)
+💾 200 GB Block Storage	Use it like a hard drive for your VPS
+🌐 10 TB outbound data/month	Enough for VPN and DNS use
+💸 Price	$0 — totally free with no hidden costs if you stay within limits
+🔐 No charges if you only use “Always Free” resources. Just make sure not to launch paid-tier machines or services by accident.
+
+🧭 What We’ll Do Next
+Once you create the Oracle Cloud account:
+
+Create a free Ubuntu virtual machine (VPS).
+
+Connect via SSH (secure shell).
+
+Install Pi-hole (ad/content filtering system).
+
+Test it safely on your test device only (so nothing at home gets affected).
+
+🎯 Step-by-Step: Create an Oracle Cloud Account
+Go to: https://signup.oracle.com
+
+Choose:
+
+Home region close to your location.
+
+Use your real name and email.
+
+Add a credit card to verify identity (you will not be charged if you only use free tier).
+
+After email verification + identity check, you’ll land in your Oracle Cloud dashboard.
+
+✅ Confirm This Before We Continue:
+ Account is created and you're logged in at https://cloud.oracle.com
+
+ You’re ready to create a new Ubuntu VM in the free tier
+
+Once you’re in, let me know and I’ll guide you exactly how to launch your free Ubuntu server without leaving the free tier.
