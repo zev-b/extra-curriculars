@@ -295,4 +295,5 @@ After email verification + identity check, you’ll land in your Oracle Cloud da
 
  You’re ready to create a new Ubuntu VM in the free tier
 
+
 Once you’re in, let me know and I’ll guide you exactly how to launch your free Ubuntu server without leaving the free tier.
