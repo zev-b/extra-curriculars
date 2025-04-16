@@ -267,6 +267,7 @@ Feature	Value
 🔐 No charges if you only use “Always Free” resources. Just make sure not to launch paid-tier machines or services by accident.
 
 
+
 🧭 What We’ll Do Next
 Once you create the Oracle Cloud account:
 
