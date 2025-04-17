@@ -33,19 +33,19 @@ function climbStairs(n) {
     let two = 1;
 
     for (let i = 0; i < n - 1; i++) {
-        console.log(`== one, == two ==/n ${one} - ${two}`);
+        console.log(`== one, == two ==\n ${one} - ${two}`);
         
         let temp = one;
-        console.log("== temp == ", temp)
+        console.log(" == temp == ", temp)
         
         one = one + two;
-        console.log(":one: ", one);
+        console.log(" :one: ", one);
         
         two = temp;
-        console.log(":two:", two);
+        console.log(" :two: ", two);
         
     }
-    console.log("== ans: one == ", one);
+    console.log(" == ans: one == ", one);
     return one;
 }
 
