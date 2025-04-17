@@ -36,16 +36,16 @@ function climbStairs(n) {
         console.log(`== one, == two ==\n ${one} - ${two}`);
         
         let temp = one;
-        console.log(" == temp == ", temp)
+        console.log("\n == temp == ", temp)
         
         one = one + two;
-        console.log(" :one: ", one);
+        console.log("\n :one: ", one);
         
         two = temp;
-        console.log(" :two: ", two);
+        console.log("\n :two: ", two);
         
     }
-    console.log(" == ans: one == ", one);
+    console.log("\n == ans: one == ", one);
     return one;
 }
 
