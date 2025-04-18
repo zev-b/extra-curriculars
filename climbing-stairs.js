@@ -21,6 +21,7 @@ Input: n = 3
 Output: 3
 Explanation:
 
+
 1 + 1 + 1 = 3
 1 + 2 = 3
 2 + 1 = 3
