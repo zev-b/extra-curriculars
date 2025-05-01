@@ -43,7 +43,6 @@ I can guide you step by step through these techniques. Let me know where you wan
 
 
 
-
 You said:
 I would like to start and please be explicit and descriptive, and please offer suggestions that are little to no cost first but include pros and cons versus a more costly solution or implementation tool
 
