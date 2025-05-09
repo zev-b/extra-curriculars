@@ -35,7 +35,6 @@ function resizeImage(file, maxWidth, maxHeight) {
       reader.readAsDataURL(file);
     });
 }
-  
 
 export default function RecipeForm({ onAdd }) {
   const [title, setTitle] = useState('');
