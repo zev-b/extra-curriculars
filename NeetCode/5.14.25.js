@@ -5,8 +5,8 @@
 /*
     Approach: Iteratively
 =========================
-1) create 2 pointers
-2) set 1 to the currendNode and the 2nd will be a trailing pointer
+1) Create 2 pointers
+2) Set 1 to the currendNode and the 2nd will be a trailing pointer
 3) While there are nodes left to reverse: 
     a) Create a temp var to track currentNode's NEXT val
     b) Set temp (currentNode's next val) to prevNode
@@ -31,7 +31,11 @@ const reverseList = head => {
     return prevNode;
 }
 
-// Recursively
+/* Recursively:
+=========================
+    O(n) time
+    O(n) space   [call stack]
+*/
 
 const reverseListRecursively = head => {
     if (!head) return null;
