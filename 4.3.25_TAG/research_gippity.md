@@ -269,6 +269,7 @@ Feature	Value
 
 
 
+
 🧭 What We’ll Do Next
 Once you create the Oracle Cloud account:
 
