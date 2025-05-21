@@ -252,6 +252,7 @@ VPN-based Filtering: ~$5/month (if not using free VPS)
 
 
 
+
 🔥 Next Steps: Hands-on Implementation
 Let me know where you want to start! I can walk you through setting up Pi-hole, configuring VPN filtering, or even building a custom Android/iOS app. 🚀
 
@@ -266,7 +267,6 @@ Feature	Value
 🌐 10 TB outbound data/month	Enough for VPN and DNS use
 💸 Price	$0 — totally free with no hidden costs if you stay within limits
 🔐 No charges if you only use “Always Free” resources. Just make sure not to launch paid-tier machines or services by accident.
-
 
 
 
