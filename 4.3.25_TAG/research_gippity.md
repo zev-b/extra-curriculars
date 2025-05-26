@@ -212,8 +212,6 @@ Get a free cloud VPS (Oracle Cloud offers a free tier).
 Install WireGuard VPN (lightweight and fast):
 
 bash
-Copy
-Edit
 sudo apt install wireguard
 Use iptables to block unwanted websites from being accessed through the VPN.
 
@@ -228,6 +226,8 @@ Harder to bypass (since all internet traffic is filtered).
 Requires more advanced knowledge of networking & VPNs.
 
 Costs ~$5/month if using a paid VPS instead of a free one.
+
+
 
 🔹 💰 Cost Comparison:
 
