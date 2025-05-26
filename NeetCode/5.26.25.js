@@ -1,14 +1,15 @@
-/*
-    Example: input = [5, 3, 6, 2, 4, null, null, 1]
-
-                     5
-                    / \
-                   3   6
-                  / \
-                 2   4
-                /
-               1
-*/
+/**
+ * Example: input = [5, 3, 6, 2, 4, null, null, 1]
+ * 
+ *                   5
+ *                  / \
+ *                 3   6
+ *                / \
+ *               2   4
+ *              /
+ *             1 
+ * 
+ */
 
 const kthSmallest = (root, k) => {
     const inOrder = [];
