@@ -35,4 +35,7 @@ const dfs = (node, k, inOrder) => {
  *          4   8
  * 
  *  ans: False
+ * 
+ * Approach Use recursive DFS and keep track of the max and min that ea node must obey in order for the tree to be valid.
  */
+
