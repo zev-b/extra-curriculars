@@ -1,14 +1,13 @@
 /**
  * Example: input = [5, 3, 6, 2, 4, null, null, 1]
  * 
- *            5
+ *              5
+ *             / \
+ *            3   6
  *           / \
- *          3   6
- *         / \
- *        2   4
- *       /
- *      1 
- * 
+ *          2   4
+ *         /
+ *        1 
  */
 
 const kthSmallest = (root, k) => {
@@ -27,7 +26,7 @@ const dfs = (node, k, inOrder) => {
 
 /**
  * Validate Binary Search Tree
- *  [ ALL left subtree(s) nodes are less than, All right subtree(s) are greater than. ]
+ * [ ALL left subtree(s) nodes are less than, All right subtree(s) are greater than. ]
  * 
  *          5
  *         / \
@@ -35,7 +34,7 @@ const dfs = (node, k, inOrder) => {
  *           / \
  *          4   8
  * 
- *  ans: False
+ *  ans: false (Not Valid)
  * 
  * Approach Use recursive DFS and keep track of the max and min that ea node must obey in order for the tree to be valid.
  */
