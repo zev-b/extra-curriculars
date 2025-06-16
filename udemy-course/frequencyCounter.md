@@ -30,6 +30,4 @@ function validAnagram(str1, str2) {
     }
     return true;
 }
-
-
 ```
