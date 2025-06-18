@@ -1,5 +1,5 @@
 import './App.css';
-import BoggleGame from './BoggleGame';
+import BoggleGame from './BoggleGame.jsx';
 
 function App() {
   return (
