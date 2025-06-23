@@ -10,7 +10,7 @@ function naiveSearch(long, short) {
     let count = 0;
     for (let i = 0; i < long.length; i++) {
         for (let j = 0; j < short.length; j++) {
-            // break out of inner comparison when next letter is not a match
+            // break out of inner comparison when next letter (since j will still incrememt) is not a match
             if (short[j] !== long[i+j]) break; 
             // We have found a match when the inner loop index has reached the same length of the short string.
             if (j === short.length -1) count++;
