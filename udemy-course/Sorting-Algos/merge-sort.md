@@ -93,4 +93,75 @@ function mergeSort(arr) {
 
 So it totals to *O(n log n)*
 
-The space Complexity is O(n), takes up more space than bubble or others mentioned before, but has a  ajor improvement on Time complexity.
+The space Complexity is O(n), so it takes up more space than bubble or others mentioned before, but has a major improvement in Time complexity.
+
+
+#
+# Now all together with a comparator argument: 
+Implement the merge sort algorithm. Given an array, this algorithm will sort the values in the array. The functions take 2 parameters: an array and an optional comparator function.
+
+The comparator function is a callback that will take two values from the array to be compared. The function returns a negative value if the first value is less than the second, a positive value if the first value is greater than the second, and 0 if both values are equal.
+
+The default comparator you provide should assume that the two parameters are numbers and that we are sorting the values from smallest to largest.
+
+Here's some guidance for how merge sort should work:
+```
+1. Break up the array into halves until you can compare one value with another
+2. Once you have smaller sorted arrays, merge those arrays with other sorted pairs until you are back at the full length of the array
+3. Once the array has been merged back together, return the merged (and sorted!) array
+4. In order to implement this function, you'll also need to implement a merge function that takes in two sorted arrays and a comparator and returns a new sorted array. 
+```
+You implemented this function in the previous exercise, so copy and paste that code here.
+
+```js
+function merge(arr1, arr2, comparator){
+    // Taken care of at entry point func, see mergeSort below
+//   if (typeof comparator !== 'function') {
+//     comparator = function(a, b) {
+//       return a - b;
+//     };
+//   }
+  let result = [];
+  let i = 0;
+  let j = 0;
+
+  while (i < arr1.length && j < arr2.length) {
+    if (comparator(arr1[i], arr2[j]) <= 0) {
+      result.push(arr1[i]);
+      i++;
+    } else {
+      result.push(arr2[j]);
+      j++;
+    }
+  }
+
+  while (i < arr1.length) {
+    result.push(arr1[i]);
+    i++;
+  }
+
+  while (j < arr2.length) {
+    result.push(arr2[j]);
+    j++;
+  }
+
+  return result;
+}
+
+function mergeSort(arr, comparator){
+  if (arr.length <= 1) return arr;
+
+  if (typeof comparator !== 'function') {
+    comparator = function(a, b) {
+      return a - b;
+    };
+  }
+  
+  let mid = Math.floor(arr.length / 2);
+    
+  let left = mergeSort(arr.slice(0, mid), comparator);
+  let right = mergeSort(arr.slice(mid), comparator);
+
+  return merge(left, right, comparator);
+}
+```
