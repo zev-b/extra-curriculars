@@ -37,7 +37,7 @@ Given an array, both algorithms will sort the values in the array. The functions
 
 3. Continue to the next element and if it is in the incorrect order, iterate through the sorted portion to place the element in the correct place.
 
-4. Repeat until the array is sorted.Implement insertion sort. Your function should accept an array and return an array of sorted values.
+4. Repeat until the array is sorted.
 `
 function insertionSort(arr, comparator){
   if (typeof comparator !== 'function') {
