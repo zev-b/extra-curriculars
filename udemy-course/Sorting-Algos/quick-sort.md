@@ -64,7 +64,7 @@ function pivot(arr, start = 0, end = arr.length -1) {
         }
     }
     // Swap the pivot from the start to the swap point
-    swap(arr, start, swpaIdx);
+    swap(arr, start, swapIdx);
 
     return swapIdx;
 }
@@ -86,3 +86,41 @@ function quickSort(arr, left = 0, right = arr.length -1) {
 Since we are pivoting on the minimum. Each decomposition only takes care of the beginning of the array. The same would be if we chose the maximum item each decomposition.
 
 2. Choosing a random or middle element can give us some optimization for the worst-case scenario.
+
+## All Together now: 
+```js
+function pivot(arr, comparator, start=0, end=arr.length - 1){
+  if (typeof comparator !== 'function') {
+      comparator = (a, b) => {
+          if (a < b) return -1;
+          if (a > b) return 1;
+          return 0;
+      };
+  }
+  const swap = (arr, idx1, idx2) => {
+        [arr[idx1], arr[idx2]] = [arr[idx2], arr[idx1]];
+  };
+  let pivot = arr[start];
+  let swapIdx = start;
+  for (let i = start + 1; i <= end; i++) {
+      if (comparator(arr[i], pivot) < 0) {
+          swapIdx++;
+          swap(arr, swapIdx, i);
+      }
+  }
+  swap(arr, start, swapIdx);
+  
+  return swapIdx;
+}
+
+function quickSort(arr, comparator, left = 0, right = arr.length -1) {
+  if (left < right) {
+      let pivotIdx = pivot(arr, comparator, left, right);
+      
+      quickSort(arr, comparator, left, pivotIdx - 1);
+      quickSort(arr, comparator, pivotIdx + 1, right);
+  }
+  return arr;
+}
+
+```
