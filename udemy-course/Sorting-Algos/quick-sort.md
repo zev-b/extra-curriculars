@@ -20,7 +20,7 @@
 - Count the amount of els less than val to determine what idx position the el will be in the sorted arr.
 - Swap the lesser vals with to be left of pivot, the move pivot after those lesser vals. 
 
-## Psuedocode:
+## Pseudocode:
 
 ### `(`Pivot/Partition Helper Func:
 - In order to implement quick sort, it's useful to implement a function responsible for arranging elements in an array on either side of a pivot.
