@@ -20,16 +20,17 @@
 - Count the amount of els less than val to determine what idx position the el will be in the sorted arr.
 - Swap the lesser vals with to be left of pivot, the move pivot after those lesser vals. 
 
-## Pseudocode:
+## Psuedocode:
 
-### (Pivot/Partition Helper Func:
+### `(`Pivot/Partition Helper Func:
 - In order to implement quick sort, it's useful to implement a function responsible for arranging elements in an array on either side of a pivot.
 - Given an array, this func should designate an element as the pivot.
 - It should then rearrange elements in the array so that all the values less than the pivot are moved to the left of the pivot and all vals greater than the pivot to the right of the pivot.
 - The order of the elements on either side of the pivot doesnt matter
 -  The helper should do this **in place**, meaning it should not create a new array.
 - When complete, the helper should return the index of the pivot.
-)
+### `)`
+
 > Choosing a pivot:
 >> Should be a median val, but we will work with the first element being the pivot, but there is a cost to this.
 
@@ -79,3 +80,9 @@ function quickSort(arr, left = 0, right = arr.length -1) {
     return arr;
 }
 ```
+
+## Big O: 
+1. When we choose the pivot as the first item only = O(n^2)
+Since we are pivoting on the minimum. Each decomposition only takes care of the beginning of the array. The same would be if we chose the maximum item each decomposition.
+
+2. Choosing a random or middle element can give us some optimization for the worst-case scenario.
