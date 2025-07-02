@@ -22,6 +22,7 @@
     - Need to write code for a scheduler?
         - Binary Heap
 
+
 ## ES2015 Class Syntax
 - What is a class? 
      - A blueprint for creating objects with pre-defined properties and methods.
