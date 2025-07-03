@@ -102,7 +102,7 @@ var list = new SinglyLinkedList()
 
 ### Pop Method
 1. If there are no nodes in the list, return undefined.
-2. Loop thru list until reach the tail, but set a variable to trach the 2nd to last item.
+2. Loop thru list until reach the tail, but set a variable to track the 2nd to last item.
 3. Set the next property of the 2nd to last node to be null.
 4. Set the tail to be the 2nd to last node.
 5. Decrement length by 1
@@ -665,3 +665,69 @@ class SinglyLinkedList {
 | *Removal*   | beg: O(1) end: O(n) | O(n) |
 | *Searching* | O(n) | O(1) |
 | *Access*    | O(n) | O(1) |
+
+## Recap:
+- SLL are excellant alternative to arrays when insertion and deletion at the beginning are frequently required.
+- Arrays conatin a bulit in index, SLL do not.
+- The idea of a list data structure that consists of nodes is the foundation for other data structures like Stacks and Queues.
+
+
+## Pseudos-Condensed: 
+
+### `push()`
+```
+1. This func should accept a value
+2. Create a new node using the value passed into the func.
+3. If there is no head (edge-case of an empty list), set the head and tail to be the newly created node.
+4. Otherwise set the next property on the tail to be the new node and set the tail property on the list to be the newly created node.
+5. Increment length by one.
+6. Return the whole Linked List with `this`.
+```
+### `pop()`
+```
+1. If there are no nodes in the list, return undefined.
+2. Loop thru list until reach the tail, but set a variable to track the 2nd to last item.
+3. Set the next property of the 2nd to last node to be null.
+4. Set the tail to be the 2nd to last node.
+5. Decrement length by 1
+6. Return the value of the node removed.
+```
+### `get()`
+```
+1. This function should accept an index
+2. If the index is less tha zero or greater than or equal to the length of the list, return null.
+3. Declare a counter var.
+4. Loop thru the list until you reach the index and return the node at that index.
+```
+### `set()`
+```
+1. Function accepts an index and a value.
+2. Use the **`get()`** method to find the specific node.
+3. If the node is not found, return false.
+4. If the node is found, set the value of that node to be the value passed to the function and return true.
+```
+
+### `insert()`
+```
+1. Function accepts an index and a val.
+2. If the index is less than zero or **greater** than the length, return false.
+3. If the index is the same as the length, **`push(val)`** a new node to the end of the list.
+4. If the index is 0, **`unshift()`** a new node to the start of the list.
+5. Otherwise, using the **`get()`** method, access the node at the specified index -1, to get the val before the placement position.
+6. Set the next property on that node to be the new node.
+7. Increment length.
+8. Return true.
+```
+### `remove()`
+```
+1. Function accapts an index.
+2. If the index is less than zero or greater than the length, return undefined.
+3. If the index is the same as the length -1, **`pop()`**
+4. If the index is 0, **`shift()`**
+5. Otherwise, using **`get()`** method, access the node at the index -1.
+6. Set the next prperty on that prev node to be the next of the next node.
+7. Decrement length.
+8. Return the value of the node removed.
+```
+### `reverse()`
+
