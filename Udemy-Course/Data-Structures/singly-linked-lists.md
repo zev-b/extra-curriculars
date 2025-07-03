@@ -1,5 +1,5 @@
 | Table of Contents         |                            |
-| ------------------------- | -------------------------- |
+| ------------------------- | -------------------------: |
 | [Syntax](#syntax)         | [Get](#get-method)         |
 | [Push](#push-method)      | [Set](#set-method)         |
 | [Pop](#pop-method)        | [Insert](#insert-method)   |
@@ -22,8 +22,8 @@
 
 - Comparisons with Arrays:
     
-| Lists | Arrays |
-| :---------: | :-----------: |
+| Lists      | Arrays       |
+| :--------- | -----------: |
 | No Indices | Indexed in order |
 | Connected via nodes with a pointer | Insertion & Deletion can be expensive |
 | Random access is not allowed | Can quickly be accessed at any specific index |
@@ -557,7 +557,6 @@ class SinglyLinkedList {
         this.tail = newTail;
         this.tail.next = null;
         this.length--;
-        // Popping the last value in the list...
         if (this.head === this.tail) {
             this.head = null;
             this.tail = null;
@@ -656,3 +655,13 @@ class SinglyLinkedList {
     }
 }
 ```
+
+### Big-O
+
+
+| Big-O       |  SLL    | Array |
+|-------------|------|-----------:|
+| *Insertion* | O(1) | O(n)      |
+| *Removal*   | beg: O(1) end: O(n) | O(n) |
+| *Searching* | O(n) | O(1) |
+| *Access*    | O(n) | O(1) |
