@@ -661,10 +661,10 @@ class SinglyLinkedList {
 
 | Big-O       |  SLL    | Array |
 |-------------|------|-----------:|
-| *Insertion* | O(1) | O(n)      |
+| *Insertion* | O(1) | O(n)       |
 | *Removal*   | beg: O(1) end: O(n) | O(n) |
-| *Searching* | O(n) | O(1) |
-| *Access*    | O(n) | O(1) |
+| *Searching* | O(n) | O(1)       |
+| *Access*    | O(n) | O(1)       |
 
 ## Recap:
 - SLL are excellant alternative to arrays when insertion and deletion at the beginning are frequently required.
@@ -672,10 +672,10 @@ class SinglyLinkedList {
 - The idea of a list data structure that consists of nodes is the foundation for other data structures like Stacks and Queues.
 
 
-## Pseudos-Condensed: 
+## Pseudos Condensed: 
 
 ### `push()`
-```
+```md
 1. This func should accept a value
 2. Create a new node using the value passed into the func.
 3. If there is no head (edge-case of an empty list), set the head and tail to be the newly created node.
@@ -684,7 +684,7 @@ class SinglyLinkedList {
 6. Return the whole Linked List with `this`.
 ```
 ### `pop()`
-```
+```md
 1. If there are no nodes in the list, return undefined.
 2. Loop thru list until reach the tail, but set a variable to track the 2nd to last item.
 3. Set the next property of the 2nd to last node to be null.
@@ -693,14 +693,14 @@ class SinglyLinkedList {
 6. Return the value of the node removed.
 ```
 ### `get()`
-```
+```md
 1. This function should accept an index
 2. If the index is less tha zero or greater than or equal to the length of the list, return null.
 3. Declare a counter var.
 4. Loop thru the list until you reach the index and return the node at that index.
 ```
 ### `set()`
-```
+```md
 1. Function accepts an index and a value.
 2. Use the **`get()`** method to find the specific node.
 3. If the node is not found, return false.
@@ -708,7 +708,7 @@ class SinglyLinkedList {
 ```
 
 ### `insert()`
-```
+```md
 1. Function accepts an index and a val.
 2. If the index is less than zero or **greater** than the length, return false.
 3. If the index is the same as the length, **`push(val)`** a new node to the end of the list.
@@ -719,7 +719,7 @@ class SinglyLinkedList {
 8. Return true.
 ```
 ### `remove()`
-```
+```md
 1. Function accapts an index.
 2. If the index is less than zero or greater than the length, return undefined.
 3. If the index is the same as the length -1, **`pop()`**
