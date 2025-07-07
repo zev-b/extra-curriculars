@@ -161,7 +161,16 @@ class DoublyLinkedList {
 ## Shift Method
 - Removing from the beginning
 
-1. 
+1. If length is 0, return undefined.
+2. Store the current head property ina variable we'll call oldHead.
+3. If the length is 1:
+    - Set the head to be null.
+    - Set the tail to be null.
+4. Update the head to be the next of the old head.
+5. Set the head's prev property to null.
+6. Set the oldHead's next prop to be null.
+7. Decrement length.
+8. Return old head
 
 
 ```js
@@ -183,20 +192,287 @@ class DoublyLinkedList {
       
     }
     pop() {
+        
+    }
+    shift() {
         if (!this.head) return undefined;
-        let removedNode = this.tail;
+        let oldHead = this.head;
 
         if (this.length === 1) {
             this.head = null;
             this.tail = null;
         } else {
-            this.tail = removedNode.prev;
-            this.tail.next = null;
-            removedNode.prev = null;
+            this.head = oldHead.next;
+            this.head.prev = null;
+            oldHead.next = null;
         }
         this.length--;
 
-        return removedNode;
+        return oldHead;
     }
 }
 ```
+
+## Unshift Method
+- adding to beginning
+
+1. Create a new node with the val passed in.
+2. If the length is 0:
+   1. Set the head to be the new node.
+   2. Set the tail to the new node.
+3. Otherwise
+   1. Set the prev property on the head to be the new node.
+   2. Set the next property on the new node to be the head property
+   3. Update the head to be the new node.
+4. Increment length
+5. Return `this`
+
+```js
+class Node {
+    constructor(val) {
+        this.val = val;
+        this.next = null;
+        this.prev = null;
+    }
+}
+
+class DoublyLinkedList {
+    constructor() {
+        this.head = null;
+        this.tail = null;
+        this.length = 0;
+    }
+    push(val) {
+      
+    }
+    pop() {
+        
+    }
+    shift() {
+        
+    }
+    unshift(val) {
+        let newNode = new Node(val);
+        if (!this.head) {
+            this.head = newNode;
+            this.tail = newNode;
+        } else {
+            this.head.prev = newNode;
+            newNode.next = this.head;
+            this.head = newNode;
+        }
+        this.length++;
+
+        return this;
+    }
+}
+```
+
+## Get Method 
+1. If the index is less than 0 or greater than or equal to length, return null;
+2. If the index is less than or equal to half the length of the list:
+   1. Loop through the list starting from the head towards the middle.
+   2. Return the node once it is found.
+3. If the index is greater than half the length of the list:
+   1. Loop through the list backwards, from the tail towards the middle.
+   2. Return the node once it is found.
+
+```js
+class Node {
+    constructor(val) {
+        this.val = val;
+        this.next = null;
+        this.prev = null;
+    }
+}
+
+class DoublyLinkedList {
+    constructor() {
+        this.head = null;
+        this.tail = null;
+        this.length = 0;
+    }
+    push(val) {
+      
+    }
+    pop() {
+        
+    }
+    shift() {
+        
+    }
+    unshift(val) {
+      
+    }
+    get(idx) {
+        if (idx < 0 || idx >= this.length) return null;
+        if (idx <= this.length / 2) {
+            let count = 0;
+            let current = this.head;
+            while (count !== idx) {
+                current = current.next;
+                count++;
+            }
+            return current;
+        } else {
+            let count = this.length -1;
+            let current = this.tail;
+            while (count !== idx) {
+                current = current.prev;
+                count--;
+            }
+            return current;
+        }
+    }
+}
+```
+
+## Set Method
+1. Create a var which is the result of calling the `get()` method at the index passed to the function.
+   1. If the `get()` method returns a valid node, set the val of that node to be the value passed to the function.
+   2. Return true.
+2. Otherwise return false.
+
+```js
+class Node {
+    constructor(val) {
+        this.val = val;
+        this.next = null;
+        this.prev = null;
+    }
+}
+
+class DoublyLinkedList {
+    constructor() {
+        this.head = null;
+        this.tail = null;
+        this.length = 0;
+    }
+    push(val) {
+      
+    }
+    pop() {
+        
+    }
+    shift() {
+        
+    }
+    unshift(val) {
+        
+    }
+    get(idx) {
+        if (idx < 0 || idx >= this.length) return null;
+        if (idx <= this.length / 2) {
+            let count = 0;
+            let current = this.head;
+            while (count !== idx) {
+                current = current.next;
+                count++;
+            }
+            return current;
+        } else {
+            let count = this.length -1;
+            let current = this.tail;
+            while (count !== idx) {
+                current = current.prev;
+                count--;
+            }
+            return current;
+        }
+    }
+    set(idx, val) {
+        let foundNode = this.get(idx); // call get()
+        if (foundNode !== null) {
+            foundNode.val = val;
+            return true;
+        }
+        return false;
+    }
+}
+```
+
+## Insert Method
+1. If the index is less than zero or greater than equal to the length, return false.
+2. If the index is 0, `unshift()`
+3. If the index is the same as the length, `push()`.
+4. Use the `get()` method to access the index -1.
+5. Set the next and prev properties on the correct nodes to link everything together.
+6. Increment length.
+7. Return true.
+
+
+
+```js
+class Node {
+    constructor(val) {
+        this.val = val;
+        this.next = null;
+        this.prev = null;
+    }
+}
+
+class DoublyLinkedList {
+    constructor() {
+        this.head = null;
+        this.tail = null;
+        this.length = 0;
+    }
+    push(val) {
+      
+    }
+    pop() {
+        
+    }
+    shift() {
+        
+    }
+    unshift(val) {
+        
+    }
+    get(idx) {
+        if (idx < 0 || idx >= this.length) return null;
+        if (idx <= this.length / 2) {
+            let count = 0;
+            let current = this.head;
+            while (count !== idx) {
+                current = current.next;
+                count++;
+            }
+            return current;
+        } else {
+            let count = this.length -1;
+            let current = this.tail;
+            while (count !== idx) {
+                current = current.prev;
+                count--;
+            }
+            return current;
+        }
+    }
+    set(idx, val) {
+        let foundNode = this.get(idx); // call get()
+        if (foundNode !== null) {
+            foundNode.val = val;
+            return true;
+        }
+        return false;
+    }
+    insert(idx, val) {
+        if (idx < 0 || idx > this.length) return false;
+        if (idx === 0) return !!this.unshift(val);
+        if (idx === this.length) !!return this.push(val);
+
+        let newNode = new Node(val);
+        // references
+        let beforeNode = this.get(idx - 1);
+        let afterNode = beforeNode.next;
+        // connection changes
+        beforeNode.next = newNode;
+        newNode.prev = beforeNode;
+        newNode.next = afterNode;
+        afterNode.prev = newNode;
+
+        this.length++;
+        return true;
+    }
+}
