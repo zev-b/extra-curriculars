@@ -1,4 +1,4 @@
-| Table of Contents         |                            |
+| Table of Contents   ->    | Singly-Linked-Lists        |
 | ------------------------- | -------------------------: |
 | [Syntax](#syntax)         | [Get](#get-method)         |
 | [Push](#push-method)      | [Set](#set-method)         |
@@ -7,7 +7,7 @@
 | [Unshift](#unshift-method)| [Reverse](#reverse-method) |
 | **[All Together](#all-together-now)** |                |
 | [Big-O](#big-O)           |
-
+| [Pseudos](#pseudos-condensed)
 
 ## Singly Linked Lists
 - What are they?
@@ -25,7 +25,7 @@
 | Lists      | Arrays       |
 | :--------- | -----------: |
 | No Indices | Indexed in order |
-| Connected via nodes with a pointer | Insertion & Deletion can be expensive |
+| Connected via nodes with a `.next` pointer   | Insertion & Deletion can be expensive |
 | Random access is not allowed | Can quickly be accessed at any specific index |
 
 ### Syntax
@@ -54,7 +54,6 @@ class SinglyLinkedList {
 // first.next.next.next = new Node("are");
 // first.next.next.next.next = new Node("you?");
 
-
 var list = new SinglyLinkedList();
 list.push("Hello");
 ```
@@ -66,6 +65,7 @@ list.push("Hello");
 4. Otherwise set the next property on the tail to be the new node and set the tail property on the list to be the newly created node. 
 5. Increment length by one.
 6. Return the whole Linked List with *`this`*
+
 
 ```js
 class Node {
