@@ -476,3 +476,48 @@ class DoublyLinkedList {
         return true;
     }
 }
+```
+
+## Remove Method
+
+```js
+class Node {
+    constructor(val) {
+        this.val = val;
+        this.next = null;
+        this.prev = null;
+    }
+}
+
+class DoublyLinkedList {
+    constructor(val) {
+        this.head = null;
+        this.tail = null;
+        this.length = 0;
+    }
+    push() {
+
+    }
+    pop() {
+        
+    }
+    shift() {
+        
+    }
+    unshift(val) {
+        
+    }
+    get(idx) {
+    
+    }
+    set(idx, val) {
+
+    }
+    insert(idx, val) {
+
+    }
+    remove(idx) {
+        
+    }
+}
+```
