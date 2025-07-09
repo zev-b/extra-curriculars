@@ -6,7 +6,7 @@
 | [Shift](#shift-method)    | [Remove](#remove-method)   |
 | [Unshift](#unshift-method)| [Reverse](#reverse-method) |
 | **[All Together](#all-together-now)** |                |
-| [Big-O](#big-O)           |
+| [Big-O](#big-o)           |
 | [Pseudos](#pseudos-condensed)
 
 # Doubly-Linked-Lists
@@ -479,6 +479,15 @@ class DoublyLinkedList {
 ```
 
 ## Remove Method
+1. if the index is less than 0 or greater than or equal to the length return undefined.
+2. If the index is 0, `shift()`
+3. If the index is the same as the length - 1, `pop()`.
+4. Use the `get(idx)` method to retrieve the item to be removed.
+5. Update the next and prev properties to remove the found node from the list.
+6. Set the next and prev to null on the found node.
+7. Decrement length.
+8. Return the removed node.
+
 
 ```js
 class Node {
@@ -517,7 +526,31 @@ class DoublyLinkedList {
 
     }
     remove(idx) {
-        
+        if (idx < 0 | idx >= this.length) return undefined;
+        if (idx === 0) return this.shift();
+        if (idx === this.length - 1) return this.pop();
+
+        let removedNode = this.get(idx);
+
+        removedNode.prev.next = removedNode.next;
+        removedNode.next.prev = removedNode.prev;
+
+        removedNode.next = null;
+        removedNode.prev = null;
+
+        this.length--;
+        return removedNode;
     }
 }
 ```
+
+### Big-O
+- DLL vs SLL
+
+| Big-O       |  DLL    | SLL |
+|-------------|---------|-----------:|
+| *Insertion* | O(1)    | O(n)       |
+| *Removal*   | **O(1)**| O(1) or O(n) at end|
+| *Searching* | O(n)    | O(n)       |
+| *Access*    | O(n)    | O(n)       |
+

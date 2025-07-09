@@ -6,7 +6,7 @@
 | [Shift](#shift-method)    | [Remove](#remove-method)   |
 | [Unshift](#unshift-method)| [Reverse](#reverse-method) |
 | **[All Together](#all-together-now)** |                |
-| [Big-O](#big-O)           |
+| [Big-O](#big-o)           |
 | [Pseudos](#pseudos-condensed)
 
 ## Singly Linked Lists
