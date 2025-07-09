@@ -544,6 +544,47 @@ class DoublyLinkedList {
 }
 ```
 
+## Reverse
+1. Check if the list is empty or has one node.
+   1. If so, return the list as-is (nothing to reverse).
+2. Initialize a pointer current to point to the head of the list.
+3. Swap the head and tail pointers.
+    - Store the old head as the new tail.
+    - Store the old tail as the new head.
+4. Traverse the list:
+    - While current is not null, do the following:
+        1. Store current.next in a temporary variable temp.
+        2. Swap current.next and current.prev.
+           - current.next = current.prev
+           - current.prev = temp
+        3. Move current to the next node in the original direction, which is stored in temp.
+- After the loop ends, all nodes have their pointers reversed.
+5. Return the list.
+
+```js
+    // ...
+    reverse() {
+            if (!this.head) return this;
+
+            let current = this.head;
+            let temp = null;
+
+            // Swap head and tail
+            this.head = this.tail;
+            this.tail = current;
+
+            // Traverse and swap next and prev pointers
+            while (current) {
+                temp = current.next;
+                current.next = current.prev;
+                current.prev = temp;
+                current = temp;
+            }
+
+            return this;
+        }
+```
+
 ### Big-O
 - DLL vs SLL
 
