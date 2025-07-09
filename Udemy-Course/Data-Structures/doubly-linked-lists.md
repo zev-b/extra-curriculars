@@ -16,7 +16,7 @@
 
 - This impacts operations we have previously encountered regarding a singly-linked.
 
-- Since we can traverse backwards, with `.prev`, we have a different method of implememnting the operations.
+- Since we can traverse backwards, with `.prev`, we have a different method of implementing the operations.
 
 - We will have to update 2 pointers, so a little more work. 
 
@@ -269,7 +269,7 @@ class DoublyLinkedList {
 ```
 
 ## Get Method 
-1. If the index is less than 0 or greater than or equal to length, return null;
+1. If the index is less than 0 or greater than or equal to length, return null.
 2. If the index is less than or equal to half the length of the list:
    1. Loop through the list starting from the head towards the middle.
    2. Return the node once it is found.
