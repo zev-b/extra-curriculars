@@ -580,7 +580,6 @@ class DoublyLinkedList {
                 current.prev = temp;
                 current = temp;
             }
-
             return this;
         }
 ```
