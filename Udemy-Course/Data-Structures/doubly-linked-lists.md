@@ -5,7 +5,7 @@
 | [Pop](#pop-method)        | [Insert](#insert-method)   |
 | [Shift](#shift-method)    | [Remove](#remove-method)   |
 | [Unshift](#unshift-method)| [Reverse](#reverse-method) |
-| **[All Together](#all-together-now)** |                |
+| **[All Together](#all-together)** |                |
 | [Big-O](#big-o)           |
 | [Pseudos](#pseudos-condensed)
 
