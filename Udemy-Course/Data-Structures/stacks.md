@@ -127,5 +127,13 @@ stack.push("SECOND"); // 2
 stack.push("THIRD");  // 3
 
 stack.pop(); // "THIRD"
-
 ```
+
+## Big-O
+| Big-O         |         |
+|---------------|---------|
+| **Insertion** | O(1)    |
+| **Removal**   | O(1)    |
+|    --------   | ------  |
+| ( *Searching* | O(n)  ) |
+| ( *Access*    | O(n)  ) |
