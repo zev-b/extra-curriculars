@@ -43,8 +43,11 @@ stack.shift(); // "edited filename"
 
 ## Singly Linked List Implementation
 - We will have different names than `head` and `tail`, and instead of `length`, we will have `size`.
-- We cannot recycle our SLL `push()` and `pop()` methods for our stack, since we need the methods to be an O(1) constant time execution, whereas the way we implemented these methods for SLL, they are O(n) since they iterate/traverse the list.
+- We *cannot* recycle our SLL `push()` and `pop()` methods for our stack, since we need the methods to be an O(1) constant time execution, whereas the way we implemented these methods for SLL, they are O(n) since they iterate/traverse the list.
 - So we can use the logic of the `shift()` and `unshift()` methods instead, to fulfill the need for constant execution.
+
+### We will be adding and removing from the **beginning** of our list.
+---
 ### Push Pseudocode:
 1. Function accepts a value.
 2. Create a new node with the value.
@@ -61,15 +64,9 @@ stack.shift(); // "edited filename"
 4. If there is more than 1 node, set the first property to be the next property on the current first.
 5. Decrement size
 6. Return value of removed node.
+
+---
 ```js
-var stack = new Stack();
-
-stack.push("FIRST");  // 1
-stack.push("SECOND"); // 2
-stack.push("THIRD");  // 3
-
-stack.pop(); // "THIRD"
-
 class Node {
     constructor(value) {
         this.value = value;
@@ -95,7 +92,7 @@ class Stack {
         }
         return ++this.size; 
     }
-    // my implentation
+    // 1. My Implentation
     pop() {
         if (!this.first) return null;
         let removedNode = this.first;
@@ -109,7 +106,7 @@ class Stack {
 
         return removedNode.value;
     }
-    // more concise, less explicit
+    // 2. More concise, but less explicit
     pop() {
         if (!this.first) return null;
         let temp = this.first;
@@ -122,5 +119,13 @@ class Stack {
         return temp.value;
     }
 }
+
+var stack = new Stack();
+
+stack.push("FIRST");  // 1
+stack.push("SECOND"); // 2
+stack.push("THIRD");  // 3
+
+stack.pop(); // "THIRD"
 
 ```
