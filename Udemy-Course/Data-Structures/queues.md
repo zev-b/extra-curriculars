@@ -32,7 +32,7 @@ q.pop(); // "First"
 3. If no nodes in the queue, set new node to be first and last properties of queue.
 4. Otherwise set the next property on the current last to be new Node, then set last property of the queue to be new Node
 5. Increment size
-6. Return queue
+6. Return 'new' size
 
 
 Dequeue: Removing from beginning (Shift)
