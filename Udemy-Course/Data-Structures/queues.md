@@ -35,7 +35,7 @@ q.pop(); // "First"
 6. Return 'new' size
 
 
-Dequeue: Removing from beginning (Shift)
+### Dequeue: Removing from beginning (Shift)
 1. If there is no first property, return null.
 2. Store first property in var
 3. See if first is the same as last (Only 1 node) If so, set the last to be null.
