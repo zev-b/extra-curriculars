@@ -25,14 +25,14 @@
 - Kinds of Trees:
     - There are many main-category Trees, and sub-niche trees that fall in those categories.
     - We will focus on: 
-        - Tree
-        - Binary Tree
-        - Binary Search Tree
+      - Tree
+      - Binary Tree
+      - Binary Search Tree
 # Binary Search Tree
   - Used to store sortable/comparable data.
   - Sorted
-  - Every Parent Node has only at most 2 children.
+  - Every Parent Node has only at most **2** children.
   - Every left child node is **always less** than the parent node.
   - Every right child node is **always greater** than the parent node.
   - Easy lookup/Search, and Insertion.
-  - We have a sorted DS, when the comparison is done, we eliminate 'half' of what needs to be traversed/checked/compared at each comparison.
+  - We have a sorted DS, when the comparison is done, we eliminate **"half"** of what needs to be traversed/checked/compared at each comparison.
