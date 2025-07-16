@@ -25,9 +25,9 @@
 - Kinds of Trees:
     - There are many main-category Trees, and sub-niche trees that fall in those categories.
     - We will focus on: 
-        1. Tree
-        2. Binary Tree
-        3. Binary Search Tree
+        - Tree
+        - Binary Tree
+        - Binary Search Tree
 # Binary Search Tree
   - Used to store sortable/comparable data.
   - Sorted
