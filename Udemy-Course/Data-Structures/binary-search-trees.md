@@ -36,3 +36,4 @@
   - Every right child node is **always greater** than the parent node.
   - Easy lookup/Search, and Insertion.
   - We have a sorted DS, when the comparison is done, we eliminate **"half"** of what needs to be traversed/checked/compared at each comparison.
+---
