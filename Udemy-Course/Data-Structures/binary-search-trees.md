@@ -28,6 +28,7 @@
       - Tree
       - Binary Tree
       - Binary Search Tree
+  
 # Binary Search Tree
   - Used to store sortable/comparable data.
   - Sorted
