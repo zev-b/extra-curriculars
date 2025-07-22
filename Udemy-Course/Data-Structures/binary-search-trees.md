@@ -6,6 +6,7 @@
   - `Sibling`: A group of nodes with the same parent.
   - `Leaf`: A node with no children.
   - `Edge`: The connection between one node and another.
+
 - Lists vs Trees
   - **Lists** = Linear
   - Lists only have 1 path through
