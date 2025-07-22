@@ -25,7 +25,7 @@
   - Folder Structer in Computer File Systems
   - Json (Javascript object notation) 
 - Kinds of Trees:
-    - There are many main-category Trees, and sub-niche trees that fall in those categories.
+    - There are many main-category Trees, and sub/niche trees that fall in those categories.
     - We will focus on: 
       - Tree
       - Binary Tree
