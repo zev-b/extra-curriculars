@@ -202,3 +202,191 @@ Remove 10 from:     →     Result:
    5                      5
 ```
 The successor of 10 is 12 (smallest in right subtree). We replace 10's value with 12, then remove the original 12 node.
+
+## Solution
+```js
+class Node {
+    constructor(value) {
+        this.value = value;
+        this.left = null;
+        this.right = null;
+    }
+}
+
+class BinarySearchTree {
+    constructor() {
+        this.root = null;
+    }
+    
+    insert(value) {
+        const newNode = new Node(value);
+        if (!this.root) {
+            this.root = newNode;
+            return this;
+        }
+        
+        let current = this.root;
+        while (true) {
+            if (value < current.value) {
+                if (!current.left) {
+                    current.left = newNode;
+                    return this;
+                }
+                current = current.left;
+            } else {
+                if (!current.right) {
+                    current.right = newNode;
+                    return this;
+                }
+                current = current.right;
+            }
+        }
+    }
+    
+    remove(value) {
+        if (!this.root) return undefined;
+        
+        // Step 1: Find the node AND its parent
+        let current = this.root;
+        let parent = null;
+        let found = false;
+        
+        // Navigate to find the target node
+        while (current && !found) {
+            if (value < current.value) {
+                parent = current;
+                current = current.left;
+            } else if (value > current.value) {
+                parent = current;
+                current = current.right;
+            } else {
+                found = true; // Found it!
+            }
+        }
+        
+        if (!found) return undefined;
+        
+        // Step 2: Handle the three removal cases
+        
+        // CASE 1: Node has no children (leaf node)
+        if (!current.left && !current.right) {
+            if (!parent) {
+                // Removing the root and it's the only node
+                this.root = null;
+            } else if (parent.left === current) {
+                parent.left = null;
+            } else {
+                parent.right = null;
+            }
+        }
+        
+        // CASE 2: Node has exactly one child
+        else if (!current.left || !current.right) {
+            // Figure out which child exists
+            const child = current.left || current.right;
+            
+            if (!parent) {
+                // Removing the root with one child
+                this.root = child;
+            } else if (parent.left === current) {
+                parent.left = child;
+            } else {
+                parent.right = child;
+            }
+        }
+        
+        // CASE 3: Node has two children
+        else {
+            // Find the successor (smallest value in right subtree)
+            let successorParent = current;
+            let successor = current.right;
+            
+            // Go left as far as possible in the right subtree
+            while (successor.left) {
+                successorParent = successor;
+                successor = successor.left;
+            }
+            
+            // Replace current node's value with successor's value
+            current.value = successor.value;
+            
+            // Now remove the successor (which has at most one child)
+            if (successorParent === current) {
+                // Successor was immediate right child
+                successorParent.right = successor.right;
+            } else {
+                // Successor was deeper in the tree
+                successorParent.left = successor.right;
+            }
+        }
+        
+        return current;
+    }
+    
+    // Helper method to visualize the tree
+    display() {
+        if (!this.root) {
+            console.log("Empty tree");
+            return;
+        }
+        
+        const printLevel = (nodes) => {
+            const nextLevel = [];
+            let output = "";
+            
+            for (let node of nodes) {
+                if (node) {
+                    output += node.value + " ";
+                    nextLevel.push(node.left, node.right);
+                } else {
+                    output += "null ";
+                    nextLevel.push(null, null);
+                }
+            }
+            
+            console.log(output.trim());
+            
+            if (nextLevel.some(node => node !== null)) {
+                printLevel(nextLevel);
+            }
+        };
+        
+        printLevel([this.root]);
+    }
+}
+
+// Let's test with the examples from the exercise
+console.log("=== Test 1: Remove leaf node (50) ===");
+const bst1 = new BinarySearchTree();
+bst1.insert(15).insert(20).insert(10).insert(12).insert(1).insert(5).insert(50);
+
+console.log("Before removing 50:");
+bst1.display();
+
+bst1.remove(50);
+console.log("\nAfter removing 50:");
+bst1.display();
+console.log("Root right value:", bst1.root.right.value); // Should be 20
+console.log("Root right.right:", bst1.root.right.right); // Should be null
+
+console.log("\n=== Test 2: Remove node with one child (1) ===");
+const bst2 = new BinarySearchTree();
+bst2.insert(15).insert(20).insert(10).insert(12).insert(1).insert(5).insert(50);
+
+bst2.remove(1);
+console.log("After removing 1:");
+console.log("Root left.left value:", bst2.root.left.left.value); // Should be 5
+
+console.log("\n=== Test 3: Remove node with two children (10) ===");
+const bst3 = new BinarySearchTree();
+bst3.insert(15).insert(20).insert(10).insert(12).insert(1).insert(5).insert(50)
+    .insert(60).insert(30).insert(25).insert(23).insert(24).insert(70);
+
+console.log("Before removing 10:");
+bst3.display();
+
+bst3.remove(10);
+console.log("\nAfter removing 10:");
+bst3.display();
+console.log("Root left value:", bst3.root.left.value); // Should be 12
+```
