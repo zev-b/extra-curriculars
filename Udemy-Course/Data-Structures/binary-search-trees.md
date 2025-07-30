@@ -166,3 +166,39 @@ class BinarySerachTree {
 
 
 (Not guarenteed, If you use a BST improperly that is weighted, or, only one-sided, it will be O(n))
+
+
+
+# Remove Challenge:
+### The "Family Tree" Analogy
+- Imagine you're removing someone from a family tree, but you need to maintain all the family relationships:
+
+- Find the person AND remember their parent (you can't just find them - you need to know who they're connected to)
+Handle based on how many "children" they have:
+
+---
+- ***No kids (leaf)***: Just remove them, tell parent they're gone
+- ***One kid***: The child takes their place in the family line
+- ***Two kids***: Find their "successor" (next oldest family member) to take their place
+---
+
+- 🔍 Always track the parent - This is what you were missing! You can't reconnect the tree without knowing the parent.
+- 🎯 Three distinct patterns - Each case has a clear, simple solution:
+---
+- 0 children → just delete
+- 1 child → promote the child
+- 2 children → find replacement, then delete replacement
+
+🔄 Case 3 is really Case 1 or 2 in disguise - When you have two children, you copy the successor's value and then delete the successor (which will have 0 or 1 children).
+### Visual Example:
+```
+Remove 10 from:     →     Result:
+      15                    15
+     /  \                  /  \  
+   10    20              12    20
+  / \      \            /        \
+ 1  12      50         1          50
+    /                    \
+   5                      5
+```
+The successor of 10 is 12 (smallest in right subtree). We replace 10's value with 12, then remove the original 12 node.
