@@ -125,7 +125,7 @@ class MaxBinaryHeap {
                 if (
                     (swap === null && rightChild > ele) || 
                     (swap !== null && rightChild > leftChild)
-                ) {
+                   ) {
                     swap = rightChildIdx;
                 }
             }
