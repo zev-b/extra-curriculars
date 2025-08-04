@@ -89,6 +89,7 @@ class MaxBinaryHeap {
    7. Return the old root
 
 
+
 ```js
 class MaxBinaryHeap {
     constructor() {
