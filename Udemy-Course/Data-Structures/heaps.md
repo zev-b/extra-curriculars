@@ -18,7 +18,7 @@
     - **L** Child stored at Index `2n + 1`
     - **R** Child stored at Index `2n + 2`
     - `[100, 19, 36, 17, 12, 25, 5, 9, 16, 6, 11, 13, 8, 1, 4]`
-    - Can find Parent of Node, by reverse-engineering this formaula. `n - 1 / 2` (floored).
+    - Can find Parent of Node, by reverse-engineering this formaula. `(n - 1) / 2` (floored).
     
     - Fill it out L to R child first.
     - Add to end...
@@ -138,3 +138,103 @@ class MaxBinaryHeap {
     }
 }
 ```
+
+# Priority Queue:
+- A DS that ea el has a prority associated with it, and is served 1 at a time, based on the priority.
+- Always serves th el with highest priority.
+- Abstract concept that can be implemented with heaps, array, or a list.
+- Iterate over DS and seek the highest priority contained in association with the elements.
+- But iteration is naive approach.
+- Remove from the top, and then heapify and sink down to restructure the priorities correctly.
+
+### Pseudocode:
+1. Write a MinBinaryHeap class. A lower number means higher priority.
+2. Each Node has a val and a priority. Use the priority to build the heap.
+3. **Enqueue** method accepts a value and a priority, makes a new node, and puts it in the right spot based off its priority.
+4. **Dequeue** method removes root element, returns it, and rearranges heap using the priority of the elements in the heap.
+5. Handling els with same priority level, by default we don't have logic with the minor changes from maxHeap, so we can add an `insertTime` to the node class and in comparison, we would factor a insertTime comparison as well, but we would have more factors to consider in actual use case for priority queue.
+
+## Code using MinBinaryHeap:
+```js
+class Node {
+    constructor(value) {
+        this.value = value;
+        this.priority = priority;
+        this.insertTime = Date.now();
+    }
+}
+class PriorityQueue {
+    constructor() {
+        this.values = [];
+    }
+    enqueue(val, priority) {
+        let newNode = new Node(val, priority);
+        this.values.push(newNode);
+        this.bubbleUp();
+    }
+    bubbleUp() {
+        let idx = this.values.length - 1;
+        const ele = this.values[idx];
+        while (idx > 0) {
+            let parentIndex = Math.floor((idx -1) /2);
+            let parent = this.values[parentIndex];
+            if (ele.priority >= parent.priority) break; //* from '<'
+            this.values[parentIndex] = ele;
+            this.values[idx] = parent;
+            idx = parentIndex;
+        }
+    }
+    dequeue() {
+        const min = this.values[0];    //* from 'max'
+        const end = this.values.pop();
+        // Edge-case when removing last, don't re-insert infinitely
+        if (this.values.length > 0) {
+            this.values[0] = end;
+            this.sinkDown();
+        }
+        return min;
+    }
+    sinkDown() {
+        let idx = 0;
+        const length = this.values.length;
+        const ele = this.values[0];
+        while (true) {
+            let leftChildIdx = 2 * idx + 1;
+            let rightChildIdx = 2 * idx + 2;
+            let leftChild, rightChild;
+            let swap = null;
+
+            if (leftChildIdx < length) {
+                leftChild = this.values[leftChildIdx];
+                if (leftChild.priority < ele.priority) {
+                    swap = leftChildIdx;
+                }
+            }
+            if (rightChildIdx < length) {
+                rightChild = this.values[rightChildIdx];
+                if (
+                    (swap === null && rightChild.priority < ele.priority) || 
+                    (swap !== null && rightChild.priority < leftChild.priority)
+                   ) {
+                    swap = rightChildIdx;
+                }
+            }
+            if (swap === null) break;
+            this.values[idx] = this.values[swap];
+            this.values[swap] = ele;
+            idx = swap;
+        }
+    }
+}
+```
+
+## Big O:
+| Complexity    |          |
+|---------------|----------|
+| *Insertion*   | O(log n) |
+| *Removal*     | O(log n) |
+| *Search*      |   O(n)   |
+
+- Each time we go down a level in the heap we have double amount of nodes, but we only have to compare to its parent. for 16 els, 4 comparisons. So its `Log base-2 of n`. Evaery doubling amount of nodes, we only increase the comparisons by 1. 
+- Unlike a BST, a Binary Heap cant be an unbalanced tree, so its always O(log n).
+- Searching is not optimal for Binary Heap, since we have no sibling associations between nodes in the heap. It would be better to use a BST if searching is needed.
