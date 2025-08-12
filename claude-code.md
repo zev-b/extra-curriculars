@@ -1,1 +1,0 @@
-`npm install @anthropic-ai/claude-code`
