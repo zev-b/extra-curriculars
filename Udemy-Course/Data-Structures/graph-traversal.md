@@ -179,7 +179,7 @@ class Graph {
             this.adjacencyList[currentVertex].forEach(neighbor => {
                 if (!visited[neighbor]) {
                     visited[neighbor] = true;
-                    stack.push(neighbor)
+                    stack.push(neighbor);
                 }
             });
         }
