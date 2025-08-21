@@ -122,7 +122,7 @@ class Graph {
             if (!vertex) return null;
             visited[vertex] = true;
             result.push(vertex);
-            this.adjacencyList[vertex].forEach(neighbor => {
+            adjacencyList[vertex].forEach(neighbor => {
                 if (!visited[neighbor]) {
                     return dfs(neighbor);
                 }
@@ -171,7 +171,7 @@ class Graph {
         let visited = {};
         let currentVertex;
 
-        visited[start] = true;
+        visited[start] = true; // mark start visited
         while (stack.length) {
             currentVertex = stack.pop();
             result.push(currentVertex);
@@ -187,3 +187,56 @@ class Graph {
     }
 }
 ```
+
+---
+# BFS
+
+- Prioritizes visiting all neighbors at current depth first, before ascending to lower layer.
+- 'Height', steps away from starting node. At each height there are neighbors.
+
+## Psuedocode
+1. The function accepts the starting vertex.
+2. Create a queue (array) and place the starting vertex in it.
+3. Create an array to store result.
+4. Create an object to store visited.
+5. Mark the starting vertex visited.
+6. Loop as long as there is anything in the queue.
+   1. Remove the fist vertex from the queue and push it into the array that stores nodes visited(result).
+   2. Loop over each vertex in the adjacency list for the vertex, mark it visited and enqueue that vertex.  
+
+
+```js
+class Graph {
+    constructor() {
+        this.adjacencyList = {};
+    }
+    bfs(start) {
+        let queue = [start]; // initialized with start
+        let result = [];
+        let visited = {};
+        let currentVertex;
+
+        visited[start] = true; // mark start visited
+        while (queue.length) {
+            currentVertex = queue.shift();
+            result.push(currentVertex);
+            
+            this.adjacencyList[currentVertex].forEach(neighbor => {
+                if (!visited[neighbor]) {
+                    visited[neighbor] = true;
+                    queue.push(neighbor);
+                }
+            });
+        }
+        return result;
+    }
+}
+```
+
+*Can also loop over to the other direction first (still a bfs) with:*
+```js
+                                    ⇓        ⇓
+this.adjacencyList[currentVertex].slice().reverse().forEach(neighbor => {
+    // ...
+});    
+    ```
