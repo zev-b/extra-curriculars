@@ -239,4 +239,4 @@ class Graph {
 this.adjacencyList[currentVertex].slice().reverse().forEach(neighbor => {
     // ...
 });    
-    ```
+```
