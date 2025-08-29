@@ -1,4 +1,5 @@
 # Coin Change *Greedy Algorithm*
+
 - The greedy algorithm is based on the strategy to target the **largest** vals first to sum them until the amount is reached, when it is not yet reached, and adding another will surpass the amount, move to the next largest..
 
 - Important note: In this coding exercise, we are using a **greedy approach** to the coin change problem, *not* Dynamic Programming. Please keep in mind that a greedy approach might **not** work well with all coin systems and denominations. If we need an approach that always yields the true minimum coin count for any set of denominations, we would use a Dynamic Programming approach, which we will implement in the next coding exercise called: "Dynamic Programming – Coin Change". In comparison to the greedy approach, that coding exercise focuses on a Dynamic Programming solution that systematically finds an optimal result for all coin sets.
