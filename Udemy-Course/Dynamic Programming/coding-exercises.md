@@ -40,7 +40,6 @@ function minCoinChange(coins, amount) {
 }
 ```
 
-
 # Coin Change *Dynamic Programming*:
 
 - Dynamic Programming - Coin Change
