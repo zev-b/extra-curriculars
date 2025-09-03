@@ -56,21 +56,21 @@ everyRecursive → `true` (no elements left to check, so "all remaining elements
 
 "Count/Sum" functions → `0`
 
-sumRecursive → `0` (nothing left to add)
+`sumRecursive` → `0` (nothing left to add)
 
-countRecursive → `0` (nothing left to count)
+`countRecursive` → `0` (nothing left to count)
 
 "Find something" functions → `undefined` or `null`
 
-findRecursive → `undefined` (standard JS convention for "not found")
+`findRecursive` → `undefined` (standard JS convention for "not found")
 
-findIndexRecursive → `-1` (JS convention for "index not found")
+`findIndexRecursive` → `-1` (JS convention for "index not found")
 
 "Transform/collect" functions → `[]` (empty array)
 
-mapRecursive → `[]` (nothing left to transform)
+`mapRecursive` → `[]` (nothing left to transform)
 
-filterRecursive → `[]` (nothing left to filter)
+`filterRecursive` → `[]` (nothing left to filter)
 
 ## The Analogy Method
 Think of your function like a real-world task:
