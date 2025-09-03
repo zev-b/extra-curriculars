@@ -56,3 +56,29 @@ function someRecursive(arr, cb){
     return someRecursive(arr.slice(1), cb);
 }
 ```
+
+## flatten
+Write a recursive function called flatten which accepts an array of arrays and returns a new array with all values flattened.
+```js
+function flatten(arr){
+   let result = [];
+    
+    for (let i = 0; i < arr.length; i++) {
+        // If the current element is an array, recursively flatten it
+        if (Array.isArray(arr[i])) {
+            // Spread the flattened array into our result
+            result.push(...flatten(arr[i]));
+        } else {
+            // If it's not an array, just add it to the result
+            result.push(arr[i]);
+        }
+    }
+    
+    return result;
+}
+
+// flatten([1, 2, 3, [4, 5] ]) // [1, 2, 3, 4, 5]
+// flatten([1, [2, [3, 4], [[5]]]]) // [1, 2, 3, 4, 5]
+// flatten([[1],[2],[3]]) // [1,2,3]
+// flatten([[[[1], [[[2]]], [[[[[[[3]]]]]]]]]]) // [1,2,3]
+```
