@@ -37,7 +37,7 @@ Think of it like asking a librarian: "Do any books in this section have red cove
 
 If the section has books → Check each one
 
-If the section is empty → The answer is clearly "No" (false), not "I don't know" (null)
+If the section is empty → The answer is clearly "No" (`false`), not "I don't know" (`null`)
 
 **Pro tip:** When in doubt, trace through what would happen if someone called your function with an empty array from the start. What would make sense to return?
 
@@ -45,43 +45,43 @@ If the section is empty → The answer is clearly "No" (false), not "I don't kno
 Your base case return value should be what the function would logically return when it can't process any more data.
 
 ## Common Patterns by Function Purpose
-"Does ANY element match?" functions → false
+"Does ANY element match?" functions → `false`
 
-someRecursive → false (no elements left to check, so "none matched")
-includes → false (didn't find the target)
+someRecursive → `false` (no elements left to check, so "none matched")
+includes → `false` (didn't find the target)
 
-"Do ALL elements match?" functions → true
+"Do ALL elements match?" functions → `true`
 
-everyRecursive → true (no elements left to check, so "all remaining elements pass")
+everyRecursive → `true` (no elements left to check, so "all remaining elements pass")
 
-"Count/Sum" functions → 0
+"Count/Sum" functions → `0`
 
-sumRecursive → 0 (nothing left to add)
+sumRecursive → `0` (nothing left to add)
 
-countRecursive → 0 (nothing left to count)
+countRecursive → `0` (nothing left to count)
 
-"Find something" functions → undefined or null
+"Find something" functions → `undefined` or `null`
 
-findRecursive → undefined (standard JS convention for "not found")
+findRecursive → `undefined` (standard JS convention for "not found")
 
-findIndexRecursive → -1 (JS convention for "index not found")
+findIndexRecursive → `-1` (JS convention for "index not found")
 
-"Transform/collect" functions → [] (empty array)
+"Transform/collect" functions → `[]` (empty array)
 
-mapRecursive → [] (nothing left to transform)
+mapRecursive → `[]` (nothing left to transform)
 
-filterRecursive → [] (nothing left to filter)
+filterRecursive → `[]` (nothing left to filter)
 
 ## The Analogy Method
 Think of your function like a real-world task:
 
-**Detective searching for a suspect:** If you run out of people to check, you say "not found" (false/undefined)
+**Detective searching for a suspect:** If you run out of people to check, you say "not found" (`false`/`undefined`)
 
-**Quality inspector checking if ALL items are good:** If no items left to check, everything so far was good (true)
+**Quality inspector checking if ALL items are good:** If no items left to check, everything so far was good (`true`)
 
-**Cashier adding up prices:** If no more items, the sum is 0
+**Cashier adding up prices:** If no more items, the sum is `0`
 
-**Teacher collecting homework:** If no students left, you have an empty pile ([])
+**Teacher collecting homework:** If no students left, you have an empty pile (`[]`)
 
 ## Quick Test
 Ask yourself: "If I called this function with an empty array, what would be the most logical result?"
@@ -122,23 +122,23 @@ This thinking process will guide you to the right base case every time!
 ## Memory Tricks
 The "Empty Restaurant" Analogy
 
-- "Is ANY customer happy?" → No customers = false (none to be happy)
-- "Are ALL customers happy?" → No customers = true (no unhappy ones!)
-- "How many customers?" → No customers = 0
-- "Who's the tallest customer?" → No customers = undefined (can't determine)
+- "Is ANY customer happy?" → No customers = `false` (none to be happy)
+- "Are ALL customers happy?" → No customers = `true` (no unhappy ones!)
+- "How many customers?" → No customers = `0`
+- "Who's the tallest customer?" → No customers = `undefined` (can't determine)
 
 ## Mathematical Identities
 
-- Addition: 0 + anything = anything (so start with 0)
-- Multiplication: 1 × anything = anything (so start with 1)
-- Boolean `AND`: true && anything = anything (so start with true)
-- Boolean `OR`: false || anything = anything (so start with false)
+- Addition: `0 + anything` = anything (so start with 0)
+- Multiplication: `1 × anything` = anything (so start with 1)
+- Boolean `AND`:` true && anything` = anything (so start with true)
+- Boolean `OR`: `false || anything` = anything (so start with false)
 
 ## JavaScript Conventions
 
-- Not found in arrays: undefined (like Array.find())
-- Not found index: -1 (like Array.indexOf())
-- Empty collections: [] or "" (like Array.map() on empty array)
+- Not found in arrays: `undefined` (like `Array.find()`)
+- Not found index: `-1` (like `Array.indexOf()`)
+- Empty collections: `[]` or `""` (like `Array.map()` on empty array)
 
 ## Quick Checklist
 
