@@ -165,6 +165,28 @@ function collectStrings(obj) {
     return stringsArr;
 }
 ```
+1. **An alternative, but needing the result array to be passed into the function directly through its parameters...**
+```js
+function collectStrings(obj, result = []) {
+    for (let key in obj) {
+        if (typeof obj[key] === 'string') {
+            result.push(obj[key]);
+        } else if (typeof obj[key] === 'object') {
+            collectStrings(obj[key], result);
+        }
+    }
+    return result;
+}
+```
+2. **Using modern array methods (functional approach):**
+```javascript
+function collectStrings(obj) {
+    return Object.values(obj).flatMap(value => 
+        typeof value === 'string' ? value : 
+        typeof value === 'object' ? collectStrings(value) : []
+    );
+}
+```
 
 ## collectStrings Solution: Pure Recursion Version
 ```js
