@@ -86,7 +86,6 @@ function flatten(arr){
 ```
 
 
-
 # Part 2:
 
 ## capitalizeFirst Solution
