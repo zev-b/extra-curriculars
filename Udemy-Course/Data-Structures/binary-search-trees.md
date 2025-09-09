@@ -390,3 +390,153 @@ console.log("\nAfter removing 10:");
 bst3.display();
 console.log("Root left value:", bst3.root.left.value); // Should be 12
 ```
+
+
+# Extra Challenge: `findSecondLargest()`
+```js
+`Write a function on the BinarySearchTree class:
+
+findSecondLargest - finds and returns the second largest value in the BST. If the tree has fewer than two nodes, return undefined.
+`
+var binarySearchTree = new BinarySearchTree();
+binarySearchTree.insert(15);
+binarySearchTree.insert(20);
+binarySearchTree.insert(10);
+binarySearchTree.insert(12);
+binarySearchTree.findSecondLargest(); // returns 15
+ 
+var binarySearchTree2 = new BinarySearchTree();
+binarySearchTree2.insert(10);
+binarySearchTree2.findSecondLargest(); // returns undefined
+
+```
+
+## Solution: 
+```js
+class Node {
+  constructor(value) {
+    this.value = value;
+    this.left = null;
+    this.right = null;
+  }
+}
+
+class BinarySearchTree {
+  constructor() {
+    this.root = null;
+  }
+
+  insert(value) {
+    // only accept numbers....watch out since NaN is typeof number!
+    if (typeof value === 'number' && !isNaN(value)) {
+      // if there is nothing in the tree, start it off with a new node!
+      if (this.root === null) {
+        this.root = new Node(value);
+        return this;
+      } else {
+        // current variable used for traversal, just like linked lists!
+        var current = this.root;
+        // keep looping till we get to the correct spot;
+        while (true) {
+          if (value < current.value) {
+            // if there is nothing on the left
+            if (current.left === null) {
+              // make a new node and get out
+              current.left = new Node(value);
+              return this;
+            }
+            // otherwise, keep moving on!
+
+            else {
+              current = current.left;
+            }
+          } else if (value > current.value) {
+            // if there is nothing on the right
+            if (current.right === null) {
+              // make a new node and get out
+              current.right = new Node(value);
+              return this;
+            } else {
+              current = current.right;
+            }
+          }
+          // otherwise it must be a duplicate so let's get out of here
+
+          else {
+            return "duplicate!";
+          }
+        }
+      }
+    } else
+      return "Please insert a number";
+  }
+
+  findSecondLargest() {
+    if (!this.root || (!this.root.left && !this.root.right)) return;
+ 
+    let current = this.root;
+    let parent = null;
+ 
+    while (current.right) {
+      parent = current;
+      current = current.right;
+    }
+ 
+    if (current.left) {
+      current = current.left;
+      while (current.right) current = current.right;
+      return current.value;
+    }
+ 
+    return parent.value;
+  }
+}
+```
+
+# Extra Challenge: `isBalanced()`
+```js
+`Write a function on the BinarySearchTree class:
+
+isBalanced - returns true if the BST is balanced, otherwise returns false.
+
+A balanced tree is defined as a tree where the depth of all leaf nodes or nodes with single children differ by no more than one.
+`
+var binarySearchTree = new BinarySearchTree();
+binarySearchTree.insert(15);
+binarySearchTree.insert(20);
+binarySearchTree.insert(10);
+binarySearchTree.insert(12);
+binarySearchTree.isBalanced(); // true
+ 
+var binarySearchTree2 = new BinarySearchTree();
+binarySearchTree2.insert(5);
+binarySearchTree2.isBalanced(); // true
+binarySearchTree2.insert(6);
+binarySearchTree2.isBalanced(); // true
+binarySearchTree2.insert(7);
+binarySearchTree2.isBalanced(); // false
+```
+## Solution: 
+```js
+// ....
+  isBalanced(node = this.root) {
+    if (node === null) {
+      return;
+    }
+    return maxDepth(node) - minDepth(node) <= 1;
+ 
+    function minDepth(node) {
+      if (node === null) {
+        return 0;
+      }
+      return 1 + Math.min(minDepth(node.left), minDepth(node.right));
+    }
+ 
+    function maxDepth(node) {
+      if (node === null) {
+        return 0;
+      }
+      return 1 + Math.max(maxDepth(node.left), maxDepth(node.right));
+    }
+  }
+```
