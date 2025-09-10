@@ -60,7 +60,7 @@ function findLast(arr, num, low = 0, high = arr.length - 1) {
 }
 ```
 
-## findRotatedIndex Solution
+## findRotatedIndex Solution:
 ```js
 function findRotatedIndex(array, num) {
   var pivot = findPivot(array)
