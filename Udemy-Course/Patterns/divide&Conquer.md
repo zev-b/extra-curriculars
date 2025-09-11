@@ -1,4 +1,4 @@
-Dividing a data set into smaller chunks and then repeating a process with a subset of data
+### Dividing a data set into smaller chunks and then repeating a process with a subset of data.
 
 ```js 
 function search(arr, val) {

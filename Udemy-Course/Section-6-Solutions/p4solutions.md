@@ -1,6 +1,7 @@
 # SOLUTIONS PART 4
 
 ## countZeroes Solution
+### Solution 1:
 ```js
 function countZeroes(arr) {
   let firstZero = findFirst(arr)
@@ -22,6 +23,28 @@ function findFirst(arr, low = 0, high = arr.length - 1) {
   return -1;
 }
 ```
+### Solution 2:
+```js
+function countZeroes(arr) {
+    let left = 0;
+    let right = arr.length - 1;
+    // Binary search to find first occurrence of 0
+    while (left <= right) {
+        let mid = Math.floor((left + right) / 2);
+        
+        if (arr[mid] === 1) {
+            // First zero must be to the right
+            left = mid + 1;
+        } else {
+            // arr[mid] === 0, first zero could be here or to the left
+            right = mid - 1;
+        }
+    }
+    // left now points to first zero (or arr.length if no zeros)
+    return arr.length - left;
+}
+```
+
 
 ## sortedFrequency Solution
 ```js
