@@ -68,7 +68,7 @@ function findFirst(arr, num, low = 0, high = arr.length - 1) {
   return -1
 }
  
-function findLast(arr, num, low = 0, high = arr.length - 1) {
+function findLast(arr, num, low = 0, high = arr.length -1) {
   if (high >= low) {
     let mid = Math.floor((low + high) / 2)
     if ((mid === arr.length - 1 || num < arr[mid + 1]) && arr[mid] === num) {
