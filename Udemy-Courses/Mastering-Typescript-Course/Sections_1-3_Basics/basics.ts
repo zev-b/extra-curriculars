@@ -24,4 +24,4 @@
 
 // I can then modify the tsconfig.json file to customize the compiler options according to my project's needs.  
 
-let pi: number = 3.14; // Here, I am explicitly declaring the type of the variable 'pi' as a number. 
+// let pi: number = 3.14; // Here, I am explicitly declaring the type of the variable 'pi' as a number. 
