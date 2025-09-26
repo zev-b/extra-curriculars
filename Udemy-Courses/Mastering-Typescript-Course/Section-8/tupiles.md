@@ -1,9 +1,9 @@
 # Tuples
 
-### 1. Tuples are a special type exclusive to TypeScript (they don't exist in JS)
+### Tuples are a special type exclusive to TypeScript (they don't exist in JS)
 
 
-### 2. Tuples are arrays of fixed lengths and ordered with specific types - like super rigid arrays.
+## Tuples are arrays of fixed lengths and ordered with specific types - like super rigid arrays.
 
 ```ts 
 // creating a tuple with its type definition
