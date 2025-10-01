@@ -1,4 +1,4 @@
-# Key Differences
+# Key Differences:
 
 - interfaces only describe the shape of **objects**.
 
