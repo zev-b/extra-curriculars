@@ -9,6 +9,7 @@
 
 
 
+
 | Interfaces | Types |
 | ---------- | -----:|
 | only describe the shape of **objects** | literal and primitive types as well |
