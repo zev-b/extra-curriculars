@@ -15,4 +15,4 @@
 | `extends` | `&` |
 | `interface Face extends Foot {}` | `type Face = Foot & {}`
 | **No** `=` used | uses `=` |
-| `interface Name {}` | `type Name = {}` |
+| `interface Name {}` | `type Name = {}` | 
