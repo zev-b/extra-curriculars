@@ -53,19 +53,5 @@ thing(); // even can call as a function without complaint (won't work though)
 thing.toUppercase(); // even call a method that doesnt exist on the variable (Since it has been assigned to false in the interim)
 ```
 
-# Delayed Initialization & Implicit Any
 
-```ts
-const movies = ["Arrival", "The Thing", "Aliens"];
-
-let foundMovies: string; // the any type will be implied and will notify that thereis a better type option to declare for a better check 
-
-for (let movies of movies) {
-    if (movie === "The Thing") {
-        foundMovie = "The Thing"
-    }
-}
-
-foundMovie(); // now, this will error
-foundMovie = 1; // now, this will error too!
 ```
