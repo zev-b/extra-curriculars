@@ -32,7 +32,7 @@ const myTypeVariable: string = "Hello Typescript World!";
 // I can then change the value of this variable to a different string as usual
 myTypeVariable = "Changes";
 
-// But if I attempt to reassign the variaable to a value that is not a string... typescript will complain and notify me that I have breached the type declared for this variable.
+// But if I attempt to reassign the variable to a value that is not a string... typescript will complain and notify me that I have breached the type declared for this variable.
 myTypeVariable = 42;
                 ^^^^ // type number is not assignable to type string
 
@@ -58,7 +58,7 @@ thing.toUppercase(); // even call a method that doesn't exist on the variable (S
 ```ts
 const movies = ["Arrival", "The Thing", "Aliens"];
 
-let foundMovies: string; // the any type will be implied and will notify that thereis a better type option to declare for a better check 
+let foundMovies: string; // the any type will be implied and will notify that there is a better type option to declare for a better check 
 
 for (let movies of movies) {
     if (movie === "The Thing") {
