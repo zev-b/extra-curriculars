@@ -1,2 +1,2 @@
 # Section 10
-- Compiling to JavaScript.
+- Section 10: Compiling to Javascript
