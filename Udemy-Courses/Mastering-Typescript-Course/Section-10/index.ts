@@ -8,6 +8,6 @@ const chicken1: Chicken = {
     breed: "Leghorn",
     eggsPerWeek: 5,
     name: "Clucky"
-}
+};
 
 export {}
