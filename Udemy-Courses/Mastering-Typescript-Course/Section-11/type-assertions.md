@@ -7,7 +7,7 @@
 const myPic = document.querySelector("profile-image") as HTMLImageElement;
 ```
 
-Or in this wierd illustartion of the concept...
+Or in this wierd illustration of the concept...
 ```ts
 let mystery: unknown = "Hello";
 
