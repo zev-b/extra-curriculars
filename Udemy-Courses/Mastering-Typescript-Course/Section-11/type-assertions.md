@@ -7,10 +7,10 @@
 const myPic = document.querySelector("profile-image") as HTMLImageElement;
 ```
 
-Or in this wierd illustration of the concept...
+Or in this wierd illustration of the concept by applying a type for a specific context...
 ```ts
 let mystery: unknown = "Hello";
 
 const numChars = (mystery as string).length;
 ```
-- This will declare it as a string in that single context, but globally `mystery` is still `unknown`.
+- This will declare it as a string in that single context, but globally `mystery` is still of type: `unknown`.
