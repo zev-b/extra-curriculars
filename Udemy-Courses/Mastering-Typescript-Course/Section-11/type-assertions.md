@@ -7,7 +7,7 @@
 const myPic = document.querySelector("profile-image") as HTMLImageElement;
 ```
 
-Or in this wierd illustration of the concept by applying a type for a specific context...
+Or in this wierd illustration of the concept; to apply a type for a variable only in a specific context...
 ```ts
 let mystery: unknown = "Hello";
 
