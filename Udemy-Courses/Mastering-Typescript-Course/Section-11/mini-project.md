@@ -13,4 +13,7 @@ form.addEventListener("submit", function (e) {
 });
 ```
 - Inside the context of the `addEventListener()` args, TS is able to determine that `e`, the event has a method of `preventDefault` even though it wasnt directly typed, and is no better than a generic `e` anywhere else.
-- If the second argument, the callback function would be defined outside of this context, even a line before, TS will complain about e being generic and the method being unknown to `e`, since it is missing in context.
+- If the second argument, the callback function would be defined outside of this context, even a line before, TS will complain about e being `generic`/`any` and the method being unknown to `e`, since it is missing in context.
+- In an out of context declaration scenario, you would need to tell typescript that `e` is an `Event`:
+    - ```ts
+        (e: SubmitEvent) // or just Event at least 
