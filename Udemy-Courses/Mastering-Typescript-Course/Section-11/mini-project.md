@@ -17,3 +17,4 @@ form.addEventListener("submit", function (e) {
 - In an out of context declaration scenario, you would need to tell typescript that `e` is an `Event`:
     - ```ts
         (e: SubmitEvent) // or just Event at least 
+    ```
